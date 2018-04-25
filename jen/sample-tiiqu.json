@@ -1,0 +1,31 @@
+[
+	{"start_date": "0",   "end_date": "1000", "content_text": "Credit Agency London", "category": "IDENTITY",     "facet": "Identity"},
+	{"start_date": "0",   "end_date": "250",  "content_text": "London University",    "category": "IDENTITY",     "facet": "Identity"},
+	{"start_date": "0",   "end_date": "50",   "content_text": "Stack Overflow",       "category": "IDENTITY",     "facet": "Identity"},
+	{"start_date": "0",   "end_date": "1000", "content_text": "Total",                "category": "TOTAL",        "facet": "Identity"},
+	
+	{"start_date": "0",   "end_date": "350",  "content_text": "Arxive",               "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "50",   "content_text": "Employee 0",           "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "150",  "content_text": "Employer A",           "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "150",  "content_text": "Company A",            "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "50",   "content_text": "Company B",            "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "50",   "content_text": "Employee 1",           "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "100",  "content_text": "Medium",               "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "250",  "content_text": "Company C",            "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "150",  "content_text": "Company A",            "category": "PERFORMANCE",  "facet": "Performance"},
+	{"start_date": "0",   "end_date": "1000", "content_text": "Total",                "category": "TOTAL",        "facet": "Performance"},
+	
+	{"start_date": "0",   "end_date": "200",  "content_text": "Stack Overflow",       "category": "REPUTATION",   "facet": "Reputation"},
+	{"start_date": "0",   "end_date": "1000", "content_text": "Total",                "category": "TOTAL",        "facet": "Reputation"},
+	
+	{"start_date": "0",   "end_date": "999", "content_text": "Credit Agency London", "category": "VERIFIED", "facet": "Verified"},
+	{"start_date": "0",   "end_date": "999", "content_text": "London University",    "category": "VERIFIED", "facet": "Verified"},
+	{"start_date": "0",   "end_date": "999", "content_text": "Stack Overflow",       "category": "VERIFIED", "facet": "Verified"},
+	{"start_date": "0",   "end_date": "1000", "content_text": "Total",                "category": "TOTAL",   "facet": "Verified"},
+	
+	{"start_date": "0",   "end_date": "249",  "content_text": "Identity",             "category": "IDENTITY",     "facet": "TQ - 550"},
+	{"start_date": "250", "end_date": "379",  "content_text": "Performance",          "category": "PERFORMANCE",  "facet": "TQ - 550"},
+	{"start_date": "380", "end_date": "399",  "content_text": "Reputation",           "category": "REPUTATION",   "facet": "TQ - 550"},
+	{"start_date": "400", "end_date": "550",  "content_text": "Verification",         "category": "VERIFICATION", "facet": "TQ - 550"},
+	{"start_date": "0",   "end_date": "1000", "content_text": "Total",                "category": "TOTAL",        "facet": "TQ - 550"}
+]
