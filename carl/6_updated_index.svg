@@ -57,7 +57,7 @@ text { color: rgb(102, 102, 102); user-select: none; cursor: default; }
 		<animate attributeName="opacity" from="0" to="1" dur="1s" begin="1s" fill="freeze" />
 	</text>
 	<text text-anchor="middle" y="425" x="690" font-family="Verdana" font-size="20" fill="white" opacity="0">
-		TQ 675
+		TQ 725
 		<animate  attributeName="opacity" from="0" to="1" dur="1.5s" begin="1.5s" fill="freeze" />
 	</text>
 	<g class="radial_axis_container">
@@ -216,7 +216,7 @@ text { color: rgb(102, 102, 102); user-select: none; cursor: default; }
                 stroke="rgb(15, 188, 34)"
                 stroke-width="15"
 				cursor="pointer"
-				d="M125.5,202 A 237.5 237.5 0 0 1 -30 235.5"
+				d="M125.5,202 A 237.5 237.5 0 0 1 -95 217.5"
 			/>
             <text text-anchor="start" transform="translate(810, 475)" id="event_text_4" style="opacity:0;">------------------------ Verification</text>
 		</g>
@@ -254,10 +254,10 @@ text { color: rgb(102, 102, 102); user-select: none; cursor: default; }
 	
 	<svg height="175" width="344" y="20" x="1000">
 		<rect fill="none" height="135" width="119" />
-		<g class="claim_element_g" transform="translate(0,57.5)" onclick="location.href = '../c to v/verification.html';">
+		<g class="claim_element_g" transform="translate(0,57.5)" onclick="location.href = '../c to v/success.html';">
 			<title>IDENTITY</title>
-			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99);"/>
-			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">University Degree (Unverified)</text>
+			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(37, 209, 25);"/>
+			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">University Degree (Verfied)</text>
 		</g>
 		<g class="claim_element_g" transform="translate(0,80)">
 			<title>PERFORMANCE</title>

@@ -17,11 +17,15 @@
 
 <input type="file"/>
 
-<a class="btn btn-success" href="success.html" target="_blank">Upload</a>
+<a class="btn btn-success" href="success.html">Upload</a>
 
 <br/>
 <br/>
 <br/>
+
+<div>
+	<a style="display:none;" id="viewDegreeButton" class="btn btn-info" href="degree.pdf">View Degree Document</a>
+</div>
 
 </div>
 
@@ -30,6 +34,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  $(function() {
+     $("input:file").change(function (){
+       $("#viewDegreeButton").show();
+     });
+  });
+</script>
 </body>
 </html>
