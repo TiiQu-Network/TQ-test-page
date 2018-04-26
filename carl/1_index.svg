@@ -239,16 +239,36 @@ text { color: rgb(102, 102, 102); user-select: none; cursor: default; }
 			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">REPUTATION</text>
 		</g>
 		<g class="legend_element_g" transform="translate(0,125)">
-			<title>TOTAL</title>
-			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99); stroke: rgb(255, 255, 255);"/>
-			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">TOTAL</text>
-		</g>
-		<g class="legend_element_g" transform="translate(0,147.5)">
 			<title>VERIFIED</title>
 			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(37, 209, 25); stroke: rgb(255, 255, 255);"/>
 			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">VERIFIED</text>
 		</g>
+		<g class="legend_element_g" transform="translate(0,147.5)">
+			<title>TOTAL</title>
+			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99); stroke: rgb(255, 255, 255);"/>
+			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">TOTAL</text>
+		</g>
 		<text class="legend_title" dy="1.4em" dx="0em" transform="translate(5,0)rotate(0)">LEGEND</text>
+	</svg>
+	
+	<svg height="175" width="244" y="20" x="1000">
+		<rect fill="none" height="135" width="119" />
+		<g class="legend_element_g" transform="translate(0,57.5)">
+			<title>IDENTITY</title>
+			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99);"/>
+			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">University Degree (Unverified)</text>
+		</g>
+		<g class="legend_element_g" transform="translate(0,80)">
+			<title>PERFORMANCE</title>
+			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99);"/>
+			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">Professional Membership (Unverified)</text>
+		</g>
+		<g class="legend_element_g" transform="translate(0,102.5)">
+			<title>REPUTATION</title>
+			<rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(37, 209, 25); stroke: rgb(255, 255, 255);"/>
+			<text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">Identity (Verfied)</text>
+		</g>
+		<text class="legend_title" dy="1.4em" dx="0em" transform="translate(5,0)rotate(0)">Claims</text>
 	</svg>
 	
 	    <script type="text/ecmascript">
