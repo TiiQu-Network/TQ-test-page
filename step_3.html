@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>
+        body {
+            background: #fff;
+            margin: 0;
+        }
+        #logo{
+            width: 200px;
+        }
+        .container{
+            font-family:monospace;
+            font-size: 20px;
+            color: #000;
+            text-align: center;
+
+            margin: 0 auto;
+            width: 80%
+        }
+        .next{
+            color: #000;
+        }
+        .header{
+            background:#111;
+            padding:20px;
+        }
+        .ref{
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><img id="logo" src="images/logo.svg"/></div>
+<br/>
+
+<div class="container">
+    <h1><u>TiiQu Platform Overview</u></h1>
+    <h2>The TQ</h2>
+
+    <svg id="main_svg" height="740" width="1483" style="opacity: 1; visibility: visible;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1483 740">
+        <defs>
+            <style type="text/css">
+                body, input, textarea, select, text { font-family: "Segoe UI Web Regular", wf_segoe-ui_normal, "Segoe UI", "Segoe UI Symbol", Myriad, Calibri, UnDotum, Optima, Tahoma, "Century Gothic", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif; margin: 0px; }
+                text { color: rgb(102, 102, 102); user-select: none; cursor: default; }
+                .legend { margin: 0px; fill: none; position: absolute; top: 0px; left: 0px; z-index: 1; }
+                .legend_rect { fill: rgb(255, 255, 255); stroke: rgb(170, 170, 170); stroke-width: 1px; }
+                .legend_title { fill: rgb(102, 102, 102); font-size: 12px; font-weight: bolder; font-stretch: expanded; }
+                .legend_element_g text { fill: rgb(102, 102, 102); font-size: 12px; cursor: pointer; }
+                .timeline_frame { fill: transparent; opacity: 0.1; stroke: none; }
+                .timeline_facet_frame { fill: none; stroke: rgb(153, 153, 153); stroke-width: 0.5px; }
+                .x_axis path, .interim_duration_axis path, .timeline_axis path { fill: none; stroke: rgb(153, 153, 153); stroke-width: 1px; z-index: -1; }
+                .rad_tick { fill: none; stroke: rgb(153, 153, 153); stroke-width: 1px; stroke-dasharray: 2; z-index: -1; }
+                .x_axis line, .interim_duration_axis line, .timeline_axis line { fill: none; stroke: rgb(153, 153, 153); shape-rendering: crispEdges; stroke-width: 1px; stroke-dasharray: 2; z-index: -1; }
+                .x_axis text, .interim_duration_axis text, .timeline_axis text { font-size: 12px; z-index: 1; }
+                .start_end_label, .radial_axis_tick, .weekday_label { font-size: 12px; }
+                .facet_title, .segment_title { font-size: 13px; font-weight: bold; font-stretch: extra-expanded; }
+                .rad_track { stroke: rgb(153, 153, 153); stroke-width: 1px; fill: none; z-index: -1; }
+            </style>
+        </defs>
+        <defs>
+            <filter id="drop-shadow" x="0" y="0" width="200%" height="200%">
+                <feOffset in="SourceAlpha" dx="2.5" dy="2.5" result="offOut"/>
+                <feGaussianBlur in="offOut" stdDeviation="2.5" result="blurOut"/>
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+            </filter>
+            <filter id="greyscale">
+                <feColorMatrix type="matrix" dur="0.5s" values="0.4444 0.4444 0.4444 0 0 0.4444 0.4444 0.4444 0 0 0.4444 0.4444 0.4444 0 0 0 0 0 1 0"/>
+            </filter>
+
+            <rect id="rect" x="517" y="92" width="350" height="350" rx="20%"/>
+            <clipPath id="clip">
+                <use xlink:href="#rect"/>
+            </clipPath>
+        </defs>
+        <image
+                x="517"
+                y="92"
+                width="350"
+                height="350"
+                xlink:href="images/jen.jpeg"
+                clip-path="url(#clip)"
+                opacity="0"
+        >
+            <animate  attributeName="opacity" from="0" to="1" dur="1500ms" begin="250ms" fill="freeze" />
+        </image>
+        <text text-anchor="middle" y="400" x="690" font-family="Verdana" font-size="28" fill="white" opacity="0">
+            Jen
+            <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1s" fill="freeze" />
+        </text>
+        <text text-anchor="middle" y="425" x="690" font-family="Verdana" font-size="20" fill="white" opacity="0">
+            TQ 550
+            <animate  attributeName="opacity" from="0" to="1" dur="1.5s" begin="1.5s" fill="freeze" />
+        </text>
+
+        <g class="radial_axis_container">
+            <g class="radial_tracks">
+                <path class="rad_track QNXttvHX_0" transform="translate(691.5,267.5)" d="M0,-177.5 A177.5,177.5 0 1,1 -146,-101 " />
+
+                <path class="rad_track QNXttvHX_1" transform="translate(691.5,267.5)" d="M0,-200 A200 200 0 1 1 -164.5 -113.5" />
+
+                <path class="rad_track QNXttvHX_2" transform="translate(691.5,267.5)" d="M0,-222.5 A222.5 222.5 0 1 1 -183 -126" />
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_3" transform="translate(691.5,267.5)" d="M0,-241.25 L0,-177.5"/>
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(691.5,267.5)" y="-252.5" x="0" opacity="0">
+                    0 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0s" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_4" ransform="translate(691.5,267.5)" d="M112,-213.5 L82.5,-157" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(601,187),rotate(27.5)" y="-223.5" x="117" opacity="0">
+                    100 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="200ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_5" transform="translate(691.5,267.5)" d="M198.5,-137 L146,-101" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(663,34.5),rotate(55.4)" y="-143.5" x="208" opacity="0">
+                    200 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="400ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_6" transform="translate(691.5,267.5)" d="M239.5,-29 L176,-21.5" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(882,-8),rotate(83),scale(1,1)" y="-30.5" x="250.5" opacity="0">
+                    300 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="600ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_7" transform="translate(691.5,267.5)" d="M225.5,85.5 L169,63" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(760,546),rotate(-69)" y="89.5" x="236" opacity="0">
+                    400 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="800ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_8" transform="translate(691.5,267.5)" d="M160,180.5 L118,133" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(608,426),rotate(-41.5)" y="189" x="167.5" opacity="0">
+                    500 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="800ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_9" transform="translate(691.5,267.5)" d="M58,234 L42.5,172.5" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(634.5,289),rotate(-14),scale(1,1)" y="245" x="60.5" opacity="0">
+                    600 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1000ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_10" transform="translate(691.5,267.5)" d="M-58,234.25 L-42.5,172" />
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(748.5,289),rotate(14)" y="245" x="-60.5" opacity="0">
+                    700 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1200ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_11" transform="translate(691.5,267.5)" d="M-160,180.5 L-118,133"/>
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(775,426),rotate(41.5)" y="189" x="-167.5" opacity="0">
+                    800 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1400ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_12" transform="translate(691.5,267.5)" d="M-225.5,85.5 L-166,63.5"/>
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(623,546),rotate(69)" y="89.5" x="-236" opacity="0">
+                    900 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1600ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_13" transform="translate(691.5,267.5)" d="M-239.5,-29 L-176,-21.5"/>
+                <text text-anchor="middle" dominant-baseline="central" transform="translate(501,-8),rotate(-83)" y="-30.5" x="-250.5" opacity="0">
+                    1000 TQ
+                    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1800ms" fill="freeze" />
+                </text>
+            </g>
+            <g class="radial_axis_tick">
+                <path class="rad_tick QNXttvHX_14" transform="translate(691.5,267.5)" d="M-198.55,-137.04 L-146.08,-100.83"/>
+            </g>
+        </g>
+        <g class="event_container">
+            <g class="event_box">
+                <path class="event_span QNXttvHX_15"
+                      transform="translate(691.5,267.5)"
+                      fill="none"
+                      stroke="rgb(130, 127, 124)"
+                      stroke-width="15"
+                      d="M0,-215 A215,215 0 1,1 -213.30,-26.95">
+                </path>
+            </g>
+            <g class="event_box">
+                <path class="event_span QNXttvHX_16"
+                      transform="translate(691.5,267.5)"
+                      fill="none"
+                      stroke="rgb(68, 179, 194)"
+                      stroke-width="15"
+                      d="M0,-237.5 A237.5,237.5 0 0,1 222.07,-84.22"/>
+            </g>
+            <g class="event_box">
+                <path class="event_span QNXttvHX_17"
+                      transform="translate(691.5,267.5)"
+                      fill="none"
+                      stroke="rgb(228, 86, 65)"
+                      stroke-width="15"
+                      d="M222.07,-84.22 A237.5,237.5 0 0,1 229.16,62.4"/>
+            </g>
+            <g class="event_box">
+                <path class="event_span QNXttvHX_18"
+                      transform="translate(691.5,267.5)"
+                      fill="none"
+                      stroke="rgb(183, 178, 12)"
+                      stroke-width="15"
+                      d="M229.16,62.4 A237.5,237.5 0 0,1 222.07,84.22"/>
+            </g>
+            <g class="event_box">
+                <path
+                        class="event_span QNXttvHX_19"
+                        transform="translate(691.5,267.5)"
+                        fill="none"
+                        stroke="rgb(15, 188, 34)"
+                        stroke-width="15"
+                        d="M222.07,84.22 A237.5,237.5 0 0,1 109.35,210.83"
+                />
+            </g>
+        </g>
+
+        <svg height="175" width="144" y="20" id="legend_panel" class="legend" x="20">
+            <rect class="legend_rect" height="135" width="119" />
+            <g class="legend_element_g" transform="translate(0,57.5)">
+                <title>IDENTITY</title>
+                <rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(68, 179, 194);"/>
+                <text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">IDENTITY</text>
+            </g>
+            <g class="legend_element_g" transform="translate(0,80)">
+                <title>PERFORMANCE</title>
+                <rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(228, 86, 65);"/>
+                <text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline;">PERFORMANCE</text>
+            </g>
+            <g class="legend_element_g" transform="translate(0,102.5)">
+                <title>REPUTATION</title>
+                <rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(219, 201, 24); stroke: rgb(255, 255, 255);"/>
+                <text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">REPUTATION</text>
+            </g>
+            <g class="legend_element_g" transform="translate(0,125)">
+                <title>TOTAL</title>
+                <rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(107, 103, 99); stroke: rgb(255, 255, 255);"/>
+                <text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">TOTAL</text>
+            </g>
+            <g class="legend_element_g" transform="translate(0,147.5)">
+                <title>VERIFIED</title>
+                <rect class="legend_element" x="5" y="2" width="15" height="15" transform="translate(0,-35)" style="fill: rgb(37, 209, 25); stroke: rgb(255, 255, 255);"/>
+                <text class="legend_element" x="25" y="10" dy="3" transform="translate(0,-35)" style="fill-opacity: 1; display: inline; font-weight: normal; fill: rgb(102, 102, 102);">VERIFIED</text>
+            </g>
+            <text class="legend_title" dy="1.4em" dx="0em" transform="translate(5,0)rotate(0)">LEGEND</text>
+        </svg>
+
+        <style data-made-with="vivus-instant">
+            .QNXttvHX_0{
+                stroke-dasharray:1888 1890;
+                stroke-dashoffset:1889;
+                animation:QNXttvHX_draw 5000ms ease-out 0ms forwards;
+            }
+
+            .QNXttvHX_1{
+                stroke-dasharray:2127 2129;
+                stroke-dashoffset:2128;
+                animation:QNXttvHX_draw 5000ms ease-out 114ms forwards;
+            }
+
+            .QNXttvHX_2{
+                stroke-dasharray:2366 2368;
+                stroke-dashoffset:2367;
+                animation:QNXttvHX_draw 5000ms ease-out 228ms forwards;
+            }
+
+            .QNXttvHX_3{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 342ms forwards;
+            }
+
+            .QNXttvHX_4{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 456ms forwards;
+            }
+
+            .QNXttvHX_5{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 570ms forwards;
+            }
+
+            .QNXttvHX_6{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 684ms forwards;
+            }
+
+            .QNXttvHX_7{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 798ms forwards;
+            }
+
+            .QNXttvHX_8{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 912ms forwards;
+            }
+
+            .QNXttvHX_9{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1026ms forwards;
+            }
+
+            .QNXttvHX_10{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1140ms forwards;
+            }
+
+            .QNXttvHX_11{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1254ms forwards;
+            }
+
+            .QNXttvHX_12{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1368ms forwards;
+            }
+
+            .QNXttvHX_13{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1482ms forwards;
+            }
+
+            .QNXttvHX_14{
+                stroke-dasharray:128 130;
+                stroke-dashoffset:129;
+                animation:QNXttvHX_draw 500ms ease-out 1596ms forwards;
+            }
+
+            .QNXttvHX_15{
+                stroke-dasharray:2038 2040;
+                stroke-dashoffset:2039;
+                animation:QNXttvHX_draw 2000ms ease-in 1010ms forwards;
+            }
+
+            .QNXttvHX_16{
+                stroke-dasharray:586 588;
+                stroke-dashoffset:587;
+                animation:QNXttvHX_draw 2000ms ease-in 1124ms forwards;
+            }
+
+            .QNXttvHX_17{
+                stroke-dasharray:320 322;
+                stroke-dashoffset:321;
+                animation:QNXttvHX_draw 2000ms ease-in 1138ms forwards;
+            }
+
+            .QNXttvHX_18{
+                stroke-dasharray:75 77;
+                stroke-dashoffset:76;
+                animation:QNXttvHX_draw 2000ms ease-in 1352ms forwards;
+            }
+
+            .QNXttvHX_19{
+                stroke-dasharray:366 368;
+                stroke-dashoffset:367;
+                animation:QNXttvHX_draw 2000ms ease-in 1366ms forwards;
+            }
+
+            @keyframes QNXttvHX_draw{
+                100%{stroke-dashoffset:0;}
+            }
+
+            @keyframes QNXttvHX_fade{
+                0%{stroke-opacity:1;}
+                96.26168224299066%{stroke-opacity:1;}
+                100%{stroke-opacity:0;}
+            }
+        </style>
+    </svg>
+
+    <img src="images/trust_quotient_algorithm.png"/>
+    <img src="images/trust_quotient_algorithm_TQ_tree.png"/>
+
+    <br style="clear: both">
+    <pre style="text-align: left; margin: 0 auto; width: 80%;">
+        <code class="json">
+{
+    "TQ":{
+        "Reputation":{
+            "TiiQu Rating":{
+                "Points":{
+                    "value_range_from":1,
+                    "value_range_to":5,
+                    "weight":98,
+                    "samples":10,
+                    "points":[
+                        {
+                            "value":1,
+                            "value_range_from":1,
+                            "value_range_to":5
+                        },
+                        {
+                            "value":4,
+                            "value_range_from":1,
+                            "value_range_to":5
+                        },
+                        {
+                            "value":5,
+                            "value_range_from":1,
+                            "value_range_to":5
+                        },
+                        "etc"
+                    ]
+                },
+                "Count":{
+                    "value":15,
+                    "value_range_from":1,
+                    "value_range_to":10000000,
+                    "weight":2
+                }
+            }
+        }
+    }
+}
+        </code>
+    </pre>
+
+
+    <a class="ref" href="https://github.com/TiiQu-Network/TiiQu-Network/wiki/The-Trust-Quotient-(TQ)">White Paper Details ></a>
+
+    <a class="next" href="step_4.html"><h1>Q ></h1></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
