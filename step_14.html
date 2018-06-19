@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/highlight.min.js.css">
+    <style>
+        body {
+            background: #fff;
+            margin: 0;
+        }
+        #logo{
+            width: 200px;
+        }
+        .container{
+            font-family:monospace;
+            font-size: 20px;
+            color: #000;
+            text-align: center;
+
+            margin: 0 auto;
+            width: 80%
+        }
+        .next{
+            color: #000;
+        }
+        .header{
+            background:#111;
+            padding:20px;
+        }
+        .ref{
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><img id="logo" src="images/logo.svg"/></div>
+<br/>
+
+<div class="container">
+    <h1><u>TiiQu Tech Deep Dive</u></h1>
+    <h2>Bulk blockchain publication of certifications | <b>Merkle trees are our friend</b></h2>
+
+    <h2>Meta Data</h2>
+    <pre  style="text-align: left;">
+                <code class="json">
+{
+	"issuedOn": "2017-07-20T09:33:47.490752+00:00",
+
+	"recipient": {
+		"identity": "carl@gibson.org",
+		"type": "email",
+		"hashed": false
+	},
+
+	"type": "Assertion",
+
+	"verification": {
+		"publicKey": "ecdsa-koblitz-pubkey:msBCHdwaQ7N2ypBYupkp6uNxtr9Pg76imj",
+		"type": [
+			"MerkleProofVerification2017",
+			"Extension"
+		]
+	},
+
+	"@context": [
+		"https://w3id.org/openbadges/v2",
+		"https://w3id.org/blockcerts/v2"
+	],
+
+	"badge": {
+		"issuer": {
+			"url": "https://www.issuer.org",
+
+			"name": "Northumbria University",
+
+			"email": "contact@issuer.org",
+
+			"type": "Profile",
+
+			"id": "https://www.blockcerts.org/samples/2.0/issuer-testnet.json",
+
+			"image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAHBCAYAAABHbe2eAAD+k0lEQVR42uydB1yb17n/X...==",
+
+			"id": "urn:uuid:82a4c9f2-3588-457b-80ea-da695571b8fc",
+
+			"description": "Lorem ipsum dolor sit amet, mei docendi concludaturque ad, cu nec partem graece. Est aperiam consetetur cu, expetenda moderatius neglegentur ei nam, suas dolor laudem eam an.",
+
+			"signatureLines": [
+				{
+					"jobTitle": "University Issuer",
+					"name": "Your signature",
+					"type": [
+						"SignatureLine",
+						"Extension"
+					],
+					"image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAABVBAMAAAC2kWv1AAAAMFBMVEX///8AAAC/v79/...=="
+				}
+			]
+		},
+
+	"id": "urn:uuid:4e7d75c5-281c-45de-93cc-3212b1349ee9",
+
+	"recipientProfile": {
+		"publicKey": "ecdsa-koblitz-pubkey:mkwntSiQmc14H65YxwckLenxY3DsEpvFbe",
+		"name": "Carl Gibson",
+
+		"type": [
+			"RecipientProfile",
+			"Extension"
+		]
+	}
+}
+                </code>
+            </pre>
+
+    <h2>Ethereum Transaction</h2>
+    <a style="text-align: left;" href="etherscan/index.html">View on Etherscan</a>
+
+    <h2>Data Hash</h2>
+    <pre style="text-align: left;">
+                <code>
+    8E35C2CD3BF6641BDB0E2050B76932CBB2E6034A0DDACC1D9BEA82A6BA57F7CF
+                </code>
+            </pre>
+
+    <h2>Publishing Without Merkle Trees</h2>
+    <embed src="images/publishing_without_merkle_trees.svg"/>
+
+    <h2>Publishing With Merkle Trees</h2>
+    <embed src="images/publishing_with_merkle_trees.svg"/>
+
+    <h2>Making a Merkle Receipt</h2>
+    <embed src="images/making_a_merkle_receipt.svg"/>
+
+    <h3>Merkle Receipt</h3>
+    <pre style="text-align: left;">
+        <code>
+    CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB
+    3E23E8160039594A33894F6564E1B1348BBD7A0088D42C4ACB73EEAED59C009D
+    2E7D2C03A9507AE265ECF5B5356885A53393A2029D241394997265A1A25AEFC6
+    18AC3E7343F016890C510E93F935261169D9E3F565436429830FAF0934F4F8E4
+    3F79BB7B435B05321651DAEFD374CDC681DC06FAA65E374E38337B88CA046DEA
+    252F10C83610EBCA1A059C0BAE8255EBA2F95BE4D1D7BCFA89D7248A82D9F111
+        </code>
+    </pre>
+
+    <h3>Merkle Root</h3>
+    <pre style="text-align: left;">
+        <code>
+    AAA9402664F1A41F40EBBC52C9993EB66AEB366602958FDFAA283B71E64DB123
+        </code>
+    </pre>
+    <a class="next" href="step_4.html"><h1>Honourable Mentions :) ></h1></a>
+</div>
+
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
