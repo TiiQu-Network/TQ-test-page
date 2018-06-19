@@ -9,6 +9,30 @@
         #logo{
             width: 200px;
         }
+        #upload-box{
+            width: 100%;
+            border-radius: 20px;
+            background-color: #eeeeee;
+            color:#343a40;
+            height: 500px;
+            border: #aaaaaa 5px dashed;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition-duration: 0.5s;
+        }
+        #upload-box:hover{
+            border: #0dab9d 5px dashed;
+            background-color: #79efe1;
+            color: #ffffff;
+            box-shadow: #dddddd 5px 5px 5px;
+        }
+        a.upload-box{
+            color:#343a40;
+        }
+        a.upload-box:hover{
+            color:#ffffff!important;
+        }
     </style>
 </head>
 <body>
@@ -133,86 +157,111 @@
 
 
         </div>
-        <div class="col-4">
+        <div class="col-8">
             <br/>
-            <h2 class="text-center">TQ Breakdown</h2>
-            <embed style="margin-left: -50px" src="images/carl_tq_1.svg">
+            <h2 class="text-center">Verify Your Claim</h2>
+            <h3 class="text-success text-center"><i class="fas fa-certificate"></i> Degree from Northumbria At Newcastle</h3>
 
             <br/>
             <div class="row">
-                <div class="col-8 offset-2">
-                    <a style="background-color: #18E1C9; border: 0; color: #ffffff" class="btn btn-block btn-lg btn-success">Grow Your TQ</a>
+                <div class="col-12">
+                    <h1>Verification Success</h1>
+
+                    <div class="alert alert-success" role="alert">
+                        <b><i class="fas fa-check"></i> Success!</b> the given document has been verified as an authentic degree with the following detail:
+                    </div>
+
+                    <h2>Degree Data</h2>
+
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>Carl Gibbons</td>
+                        </tr>
+                        <tr>
+                            <td>Issuer</td>
+                            <td>University of Northumbria at Newcastle</td>
+                        </tr>
+                        <tr>
+                            <td>Degree Type</td>
+                            <td>MASTER of ENGINEERING</td>
+                        </tr>
+                        <tr>
+                            <td>Degree Grade</td>
+                            <td>SECOND CLASS HONOURS (upper division)</td>
+                        </tr>
+                        <tr>
+                            <td>Degree Speciality</td>
+                            <td>Biomedical Technology</td>
+                        </tr>
+                        <tr>
+                            <td>Issue Date</td>
+                            <td>20th July 2017</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <h3>Data Hash</h3>
+                        <pre>
+                            <code>
+                                8E35C2CD3BF6641BDB0E2050B76932CBB2E6034A0DDACC1D9BEA82A6BA57F7CF
+                            </code>
+                        </pre>
+
+                        <h3>Merkle Receipt</h3>
+                        <pre>
+                            <code>
+                                CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB
+                                3E23E8160039594A33894F6564E1B1348BBD7A0088D42C4ACB73EEAED59C009D
+                                2E7D2C03A9507AE265ECF5B5356885A53393A2029D241394997265A1A25AEFC6
+                                18AC3E7343F016890C510E93F935261169D9E3F565436429830FAF0934F4F8E4
+                                3F79BB7B435B05321651DAEFD374CDC681DC06FAA65E374E38337B88CA046DEA
+                                252F10C83610EBCA1A059C0BAE8255EBA2F95BE4D1D7BCFA89D7248A82D9F111
+                            </code>
+                        </pre>
+
+                        <h3>Merkle Root</h3>
+                        <pre>
+                            <code>
+                                AAA9402664F1A41F40EBBC52C9993EB66AEB366602958FDFAA283B71E64DB123
+                            </code>
+                        </pre>
+
+                        <h3>Contract Address</h3>
+                        <pre>
+                            <code>
+                                0xa74476443119A942dE498590Fe1f2454d7D4aC0d
+                            </code>
+                        </pre>
+
+                        <h3>Transaction Hash</h3>
+                        <a href="etherscan/index.html">View on Etherscan</a>
+                        <pre>
+                            <code>
+                                0xa78b1503d6399ca22d10d4f5b828ec55d0a66a55b11c9ce885d4e817f8e375df
+                            </code>
+                        </pre>
+                    </div>
+
+                    <br/>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a class="btn btn-success" href="step_10.html">Back to your profile</a>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a class="btn btn-info" href="step_8.pdf">View Degree Document</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-4">
-            <br/>
-            <h2 class="text-center">Claims</h2>
-            <h4 class="text-success">Verified</h4>
-            <br/>
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-success"><i class="fas fa-certificate"></i> Identity</h5>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="View Source."
-                    >
-                        <i class="fas fa-university"></i>
-                    </a>
-                </div>
-            </div>
-            <hr/>
-
-            <h4 class="text-muted">Unverified</h4>
-            <br/>
-
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-muted"><i class="fas fa-circle-notch"></i> Degree from Northumbria At Newcastle</h5>
-                </div>
-                <div class="col-3 ">
-                    <a href="step_7.html" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="Get Verified."
-                    >
-                        <i class="far fa-check-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-muted">
-                        <i class="fas fa-circle-notch"></i> Member of Institute of Mathematicians
-                    </h5>
-                </div>
-                <div class="col-3 ">
-                    <a href="step_7.html" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="Get Verified."
-                    >
-                        <i class="far fa-check-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <hr/>
-
-            <a class="btn btn-success btn-block" href="#"><i class="fas fa-plus"></i> Add Another Claim</a>
-
-        </div>
     </div>
 </div>
 <footer>
@@ -225,15 +274,9 @@
     </div>
 </footer>
 
-<script src="js/popper.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/holder.min.js"></script>
 
-<script>
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
-</script>
 </body>
 </html>

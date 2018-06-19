@@ -9,6 +9,30 @@
         #logo{
             width: 200px;
         }
+        #upload-box{
+            width: 100%;
+            border-radius: 20px;
+            background-color: #eeeeee;
+            color:#343a40;
+            height: 500px;
+            border: #aaaaaa 5px dashed;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition-duration: 0.5s;
+        }
+        #upload-box:hover{
+            border: #0dab9d 5px dashed;
+            background-color: #79efe1;
+            color: #ffffff;
+            box-shadow: #dddddd 5px 5px 5px;
+        }
+        a.upload-box{
+            color:#343a40;
+        }
+        a.upload-box:hover{
+            color:#ffffff!important;
+        }
     </style>
 </head>
 <body>
@@ -133,86 +157,41 @@
 
 
         </div>
-        <div class="col-4">
+        <div class="col-8">
             <br/>
-            <h2 class="text-center">TQ Breakdown</h2>
-            <embed style="margin-left: -50px" src="images/carl_tq_1.svg">
+            <h2 class="text-center">Verify Your Claim</h2>
+            <h3 class="text-muted text-center"><i class="fas fa-circle-notch"></i> Degree from Northumbria At Newcastle</h3>
 
             <br/>
+            <a class="upload-box" href="#">
+                <div id="upload-box">
+                    <h1>Upload Your Certification</h1>
+                </div>
+            </a>
+
+            <br/>
+            <input type="file"> <a class="btn btn-success" href="step_9.html">Upload</a>
+
+            <div>
+                <a style="display:none;" id="viewDegreeButton" class="btn btn-info" href="step_8.pdf">View Degree Document</a>
+            </div>
+
+            <br/>
+            <br/>
             <div class="row">
-                <div class="col-8 offset-2">
-                    <a style="background-color: #18E1C9; border: 0; color: #ffffff" class="btn btn-block btn-lg btn-success">Grow Your TQ</a>
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <p><i class="fas fa-exclamation-circle"></i> Your university is not in the TiiQu certifications program?</p>
+                        <p>No problem. We have a number of other methods you can use to get verified. See below:</p>
+                    </div>
+                    <ul>
+                        <li>My University recently joined but after I graduated. <a class="btn btn-outline-success">Get Started.</a></li>
+                        <li>My University doen't know what a blockchain is. <a class="btn btn-outline-success">Get Started.</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="col-4">
-            <br/>
-            <h2 class="text-center">Claims</h2>
-            <h4 class="text-success">Verified</h4>
-            <br/>
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-success"><i class="fas fa-certificate"></i> Identity</h5>
-                </div>
-                <div class="col-3">
-                    <a href="#" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="View Source."
-                    >
-                        <i class="fas fa-university"></i>
-                    </a>
-                </div>
-            </div>
-            <hr/>
-
-            <h4 class="text-muted">Unverified</h4>
-            <br/>
-
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-muted"><i class="fas fa-circle-notch"></i> Degree from Northumbria At Newcastle</h5>
-                </div>
-                <div class="col-3 ">
-                    <a href="step_7.html" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="Get Verified."
-                    >
-                        <i class="far fa-check-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-9">
-                    <h5 class="text-muted">
-                        <i class="fas fa-circle-notch"></i> Member of Institute of Mathematicians
-                    </h5>
-                </div>
-                <div class="col-3 ">
-                    <a href="step_7.html" class="text-info"
-                       data-trigger="hover"
-                       data-container="body"
-                       data-toggle="popover"
-                       data-placement="bottom"
-                       data-content="Get Verified."
-                    >
-                        <i class="far fa-check-square"></i>
-                    </a>
-                </div>
-            </div>
-
-            <hr/>
-
-            <a class="btn btn-success btn-block" href="#"><i class="fas fa-plus"></i> Add Another Claim</a>
-
-        </div>
     </div>
 </div>
 <footer>
@@ -225,15 +204,17 @@
     </div>
 </footer>
 
-<script src="js/popper.min.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/holder.min.js"></script>
 
 <script>
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
+    $(function() {
+        $("input:file").change(function (){
+            $("#viewDegreeButton").show();
+        });
+    });
 </script>
+
 </body>
 </html>
