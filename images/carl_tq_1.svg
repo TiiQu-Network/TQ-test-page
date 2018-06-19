@@ -162,63 +162,67 @@
 				/>
 			</g>
 			<g class="timeline_event_g" id="event_g20">
-				<path
-					onclick="location.href = '2_identity.svg';"
-					onmouseover="showLabel(evt, 1)"
-					onmouseout="hideLabel(evt, 1)"
-					class="event_span QNXttvHX_16"
-					transform="translate(341.5,267.5)"
-					fill="none"
-					stroke="rgb(68, 179, 194)"
-					stroke-width="15"
-					cursor="pointer"
-					d="M0,-237.5 A 237.5 237.5 0 0 1 181.5 -153"
-				/>
+				<a xlink:href="../step_6.html" target="_top">
+					<path
+						onmouseover="showLabel(evt, 1)"
+						onmouseout="hideLabel(evt, 1)"
+						class="event_span QNXttvHX_16"
+						transform="translate(341.5,267.5)"
+						fill="none"
+						stroke="rgb(68, 179, 194)"
+						stroke-width="15"
+						cursor="pointer"
+						d="M0,-237.5 A 237.5 237.5 0 0 1 181.5 -153"
+					/>
+				</a>
 				<text text-anchor="start" transform="translate(341.5, 35)" id="event_text_1" style="opacity:0;">---- Identity</text>
 			</g>
 			<g class="timeline_event_g" id="event_g21">
-				<path
-					onclick="location.href = '3_performance.svg';"
-					onmouseover="showLabel(evt, 2)"
-					onmouseout="hideLabel(evt, 2)"
-					class="event_span QNXttvHX_17"
-					transform="translate(341.5,267.5)"
-					fill="none"
-					stroke="rgb(228, 86, 65)"
-					stroke-width="15"
-					cursor="pointer"
-					d="M181.5,-153 A 237.5 237.5 0 0 1 237 -17"
-				/>
+				<a xlink:href="../step_6.html" target="_top">
+					<path
+						onmouseover="showLabel(evt, 2)"
+						onmouseout="hideLabel(evt, 2)"
+						class="event_span QNXttvHX_17"
+						transform="translate(341.5,267.5)"
+						fill="none"
+						stroke="rgb(228, 86, 65)"
+						stroke-width="15"
+						cursor="pointer"
+						d="M181.5,-153 A 237.5 237.5 0 0 1 237 -17"
+					/>
+				</a>
 				<text text-anchor="start" transform="translate(525, 125)" id="event_text_2" style="opacity:0;">---- Performance</text>
 			</g>
 			<g class="timeline_event_g" id="event_g22">
-				<path
-					onclick="location.href = '4_reputation.svg';"
-					onmouseover="showLabel(evt, 3)"
-					onmouseout="hideLabel(evt, 3)"
-					class="event_span QNXttvHX_18"
-					transform="translate(341.5,267.5)"
-					fill="none"
-					stroke="rgb(183, 178, 12)"
-					stroke-width="15"
-					cursor="pointer"
-					d="M237,-17 A 237.5 237.5 0 0 1 125 202"
-				/>
+				<a xlink:href="../step_6.html" target="_top">
+					<path
+						onmouseover="showLabel(evt, 3)"
+						onmouseout="hideLabel(evt, 3)"
+						class="event_span QNXttvHX_18"
+						transform="translate(341.5,267.5)"
+						fill="none"
+						stroke="rgb(183, 178, 12)"
+						stroke-width="15"
+						cursor="pointer"
+						d="M237,-17 A 237.5 237.5 0 0 1 125 202"
+					/>
+				</a>
 				<text text-anchor="start" transform="translate(578.5, 260)" id="event_text_3" style="opacity:0;">---- Reputation</text>
 			</g>
 			<g class="timeline_event_g" id="event_g23">
-				<path
-					onclick="location.href = '5_verification.svg';"
-					onmouseover="showLabel(evt, 4)"
-					onmouseout="hideLabel(evt, 4)"
-					class="event_span QNXttvHX_19"
-					transform="translate(341.5,267.5)"
-					fill="none"
-					stroke="rgb(15, 188, 34)"
-					stroke-width="15"
-					cursor="pointer"
-					d="M125.5,202 A 237.5 237.5 0 0 1 -30 235.5"
-				/>
+				<a xlink:href="../step_6.html" target="_top">
+					<path
+							onmouseover="showLabel(evt, 4)"
+							onmouseout="hideLabel(evt, 4)"
+							class="event_span QNXttvHX_19"
+							transform="translate(341.5,267.5)"
+							fill="none"
+							stroke="rgb(15, 188, 34)"
+							stroke-width="15"
+							cursor="pointer"
+							d="M125.5,202 A 237.5 237.5 0 0 1 -30 235.5"
+					/>
+				</a>
 				<text text-anchor="start" transform="translate(460, 475)" id="event_text_4" style="opacity:0;">---- Verification</text>
 			</g>
 		</g>
