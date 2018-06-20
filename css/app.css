@@ -1,0 +1,41 @@
+#logo{
+    width: 200px;
+}
+
+.nav-tiiqu-header{
+    background:#53CCBD;
+    box-shadow: #333 0 0 5px;
+}
+
+.btn-tiiqu{
+    background-color:#18E1C9;
+    color:#ffffff;
+}
+.text-tiiqu{
+    color: #18E1C9;
+}
+
+#upload-box{
+    width: 100%;
+    border-radius: 20px;
+    background-color: #eeeeee;
+    color:#343a40;
+    height: 500px;
+    border: #aaaaaa 5px dashed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.5s;
+}
+#upload-box:hover{
+    border: #0dab9d 5px dashed;
+    background-color: #79efe1;
+    color: #ffffff;
+    box-shadow: #dddddd 5px 5px 5px;
+}
+a.upload-box{
+    color:#343a40;
+}
+a.upload-box:hover{
+    color:#ffffff!important;
+}
