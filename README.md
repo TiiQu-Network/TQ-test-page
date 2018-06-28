@@ -1,4 +1,4 @@
-#TiiQu Demo
+# TiiQu Demo
 
 - Step 1) Open `index.html` in a browser
 - Step 2) Present demo
