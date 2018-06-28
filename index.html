@@ -2,42 +2,277 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TiiQu #ETHLDN</title>
-    <style>
-        html{
-            height: 100%;
-        }
-        body {
-            background: #111;
-
-            height: 100%;
-            margin: 0;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-        #logo{
-            width: 400px;
-        }
-        .container{
-            font-family:monospace;
-            color: #fff;
-            text-align: center
-        }
-        .qr{
-            box-shadow: #000 5px 5px 5px;
-        }
-    </style>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script defer src="js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-    <div class="container">
-        <a href="step_0.html">
-            <img id="logo" src="images/logo.svg"/>
-        </a>
-        <h1>TiiQu Tech #ETHLDN</h1>
-        <h2>telegram.tiiqu.com | @TiiQu_Network | whitepaper.tiiqu.com | tiiqu.com</h2>
-        <img class="qr" src="images/tiiqu_qr.svg">
+<div class="container">
+    <div class="row">
+        <br/>
     </div>
+
+    <div class="row">
+        <div class="col-10">
+            <h3>TQ Demo</h3>
+            <h4 class="text-muted">Check your TQ rating!</h4>
+        </div>
+        <div class="col-1 offset-1"><img height="70px" src="images/q_icon.png"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <br/>
+            <h2>Tell us a little about you.</h2>
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Your work experience <i class="fas fa-plus text-success"></i></h3>
+            <br/>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" placeholder="Workplace name" value="TiiQu Ltd">
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">From</div>
+                            </div>
+                            <input type="date" class="form-control" placeholder="Username" value="2016-01-01">
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">To</div>
+                            </div>
+                            <input type="date" class="form-control" placeholder="Username" value="2018-01-01">
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Role</label>
+                        <input type="text" class="form-control mb-2" placeholder="Role" value="Developer">
+                    </div>
+
+                    <div class="col-1">
+                        <label class="sr-only" for="inlineFormInput">Rating</label>
+                        <input type="text" class="form-control mb-2" placeholder="Rating" value="8">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-danger mb-1">-</button>
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" placeholder="Workplace name">
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">From</div>
+                            </div>
+                            <input type="date" class="form-control" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">To</div>
+                            </div>
+                            <input type="date" class="form-control" placeholder="Username">
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Role</label>
+                        <input type="text" class="form-control mb-2" placeholder="Role">
+                    </div>
+
+                    <div class="col-1">
+                        <label class="sr-only" for="inlineFormInput">Rating</label>
+                        <input type="text" class="form-control mb-2" placeholder="Rating">
+                    </div>
+
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-danger mb-1">-</button>
+                    </div>
+                </div>
+            </form>
+
+            <br/>
+            <div class="alert alert-info">
+                <p><i class="fas fa-exclamation-circle"></i> When estimating your work experience rating imagine what score out of 10 would your boss give you.</p>
+            </div>
+            <hr/>
+
+            <h3>Your education <i class="fas fa-plus text-success"></i></h3>
+            <br/>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Institution Name" value="University of Newtown">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" id="inlineFormInputGroup">
+                            <option>Select the institution type</option>
+                            <option selected >University</option>
+                            <option>College</option>
+                            <option>Certification</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2"  placeholder="Institution Name">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" >
+                            <option>Select the institution type</option>
+                            <option>University</option>
+                            <option>College</option>
+                            <option>Certification</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+            <hr/>
+
+            <h3>Reputation <i class="fas fa-plus text-success"></i></h3>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2"  placeholder="Score" value="1900">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" >
+                            <option>Source</option>
+                            <option selected>Stack Overflow</option>
+                            <option>Github</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2"  placeholder="Score">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" >
+                            <option>Source</option>
+                            <option>Stack Overflow</option>
+                            <option>Github</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+            <hr/>
+
+            <h3>Misc <i class="fas fa-plus text-success"></i></h3>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2"  value="Member of British Computer Society">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" >
+                            <option>Select information type</option>
+                            <option>Identity Proof</option>
+                            <option selected >Professional Membership</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2"  placeholder="Additional information description">
+                    </div>
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <select type="text" class="form-control mb-2" >
+                            <option>Select information type</option>
+                            <option>Identity Proof</option>
+                            <option>Professional Membership</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-danger mb-2">-</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<br/>
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1">
+                <p>&copy; TiiQu Ltd 2018</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

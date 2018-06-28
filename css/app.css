@@ -2,6 +2,21 @@
     width: 200px;
 }
 
+body {
+    background: linear-gradient(#00cba0, #003d51) no-repeat fixed;
+    padding: 20px 0;
+    height: 100%;
+}
+
+footer {
+    background: #ffffff;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 5px;
+}
+
 .nav-tiiqu-header{
     background:#53CCBD;
     box-shadow: #333 0 0 5px;
