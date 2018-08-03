@@ -6,14 +6,18 @@ class DynamicField extends Component {
   constructor() {
     super()
     this.state = {
-      fieldNumber: [{value: ''}]
+      fieldNumber: [{
+        value: {}
+      }]
     }
     this.addField = this.addField.bind(this)
   }
 
   addField() {
     this.setState({
-      fieldNumber: this.state.fieldNumber.concat([{value: ''}])
+      fieldNumber: this.state.fieldNumber.concat([{
+        value: {}
+      }])
     })
   }
 
@@ -23,24 +27,41 @@ class DynamicField extends Component {
     })
   }
 
-  onChangeValue() {
-
+  onChangeValue(index, valueName) {
+    return (event) => {
+      let array = this.state.fieldNumber
+      array[index][valueName] = event.target.value
+      this.setState({fieldNumber: array})
+      this.props.onChange && this.props.onChange(array)
+    }
   }
 
   render() {
     const {
       fields
     } = this.props
-    return this.state.fieldNumber.map(( field, index ) => (
+    return this.state.fieldNumber.map((field, index) => (
       <div className="form-row align-items-center">
         {
             fields.map(item => (
               <div className="col-auto">
                 <label className="sr-only" htmlFor="inlineFormInput">{item.label}</label>
-                { item.type !== 'select' && <input type={item.type} name={item.name} className="form-control mb-2" placeholder={item.placeholder}  value={field.value} /> }
+                {
+                  item.type !== 'select' &&
+                  <input
+                    type={item.type}
+                    name={item.name}
+                    className="form-control mb-2"
+                    placeholder={item.placeholder}
+                    onChange={this.onChangeValue(index, item.name)}
+                    value={field.value[item.name]} />
+                }
                 {
                   item.type === 'select' &&
-                    <select className="form-control mb-2" >
+                    <select
+                      className="form-control mb-2"
+                      value={field.value[item.name]}
+                      onChange={this.onChangeValue(index, item.name)}>
                       <option value=''>{item.placeholder}</option>
                     {
                       item.options.map(option => (
