@@ -101,12 +101,12 @@ class App extends Component {
             <hr />
             <h3> Skills <i className="fas fa-plus text-success" /></h3>
             <DynamicField fields={[
-              {type: "text", label: "Institution Name", name: "membership", placeholder: "Membership"},
+              {type: "text", label: "Skill", name: "skill", placeholder: "Skill"},
               {
                 type: "select",
-                label: "Membership Type",
-                name: "membershiptype",
-                placeholder: "Select Information Type",
+                label: "Skill level",
+                name: "skill-level",
+                placeholder: "Skill Level",
                 options: [
                   {label: "Professional Membership", value: "Professional"},
                   {label: "Identity Proof", value: "identityproof"}
@@ -116,12 +116,12 @@ class App extends Component {
             <hr />
             <h3> Social Networks <i className="fas fa-plus text-success" /></h3>
             <DynamicField fields={[
-              {type: "text", label: "Institution Name", name: "membership", placeholder: "Membership"},
+              {type: "text", label: "Institution Name", name: "url", placeholder: "url"},
               {
                 type: "select",
-                label: "Membership Type",
-                name: "membershiptype",
-                placeholder: "Select Information Type",
+                label: "Network",
+                name: "network",
+                placeholder: "Network",
                 options: [
                   {label: "Professional Membership", value: "Professional"},
                   {label: "Identity Proof", value: "identityproof"}
