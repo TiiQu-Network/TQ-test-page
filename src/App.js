@@ -8,6 +8,27 @@ import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      workexperence: [],
+      education: [],
+      skills: [],
+      social: [],
+      misc: [],
+      reputation: [],
+    }
+    this.onChange = this.onChange.bind(this)
+    this.scores = this.scores.bind(this)
+  }
+  onChange(name) {
+    return value => {
+      this.setState({[name]: value})
+    }
+  }
+  calculateScores() {
+
+  }
   render() {
     return (
       <div className="container">
@@ -38,7 +59,9 @@ class App extends Component {
               {type: "date", label: "From", name: "from", placeholder: "From"},
               {type: "date", label: "To", name: "to", placeholder: "To"},
               {type: "text", label: "Workplace", name: "workplace", placeholder: "Workplace name"},
-            ]} />
+            ]}
+            onChange={this.onChange('workexperence')}
+      />
             <br />
             <div className="alert alert-info">
               <p><i className="fas fa-exclamation-circle" /> When estimating your work experience rating imagine what score out of 10 would your boss give you.</p>
