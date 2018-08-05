@@ -28,7 +28,7 @@ class App extends Component {
       }
     }
     this.onChange = this.onChange.bind(this)
-    this.scores = this.scores.bind(this)
+    this.calculateScores = this.calculateScores.bind(this)
   }
   onChange(name) {
     return value => {
@@ -37,20 +37,26 @@ class App extends Component {
       })
     }
   }
-  calculateScores(values) {
-    let score;
+  calculateScores() {
+    const {
+      workexperence,
+      education,
+      skills,
+      social,
+      misc,
+      reputation
+    } = this.state
+
     const baseValues = {
       workexperence: 25,
       education: 20,
       skills: 15,
       social: 10,
+      misc: 15,
       reputation: 20,
     }
 
-    const educationbasevalue = 10;
-    const skillbasevalue = 10;
-    const reputationbasevalue = 10;
-    values.map(value => {
+    this.setState({
 
     })
   }
