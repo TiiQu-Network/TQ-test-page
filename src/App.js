@@ -3,6 +3,9 @@ import React, {
 } from 'react';
 import logo from './images/q_icon.png'
 import DynamicField from './DynamicField'
+import {
+  Modal
+} from 'reactstrap'
 import './css/app.css';
 import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
@@ -17,19 +20,44 @@ class App extends Component {
       social: [],
       misc: [],
       reputation: [],
+      scores: {
+        reputation: 0,
+        identity: 0,
+        perfomance: 0,
+        total: 0
+      }
     }
     this.onChange = this.onChange.bind(this)
     this.scores = this.scores.bind(this)
   }
   onChange(name) {
     return value => {
-      this.setState({[name]: value})
+      this.setState({
+        [name]: value
+      })
     }
   }
-  calculateScores() {
+  calculateScores(values) {
+    let score;
+    const baseValues = {
+      workexperence: 25,
+      education: 20,
+      skills: 15,
+      social: 10,
+      reputation: 20,
+    }
 
+    const educationbasevalue = 10;
+    const skillbasevalue = 10;
+    const reputationbasevalue = 10;
+    values.map(value => {
+
+    })
   }
   render() {
+    const {
+      scores
+    } = this.state
     return (
       <div className="container">
         <div className="row">
@@ -153,6 +181,9 @@ class App extends Component {
             ]} />
           </div>
         </div>
+        <Modal>
+          {scores.total}
+        </Modal>
       </div>
     );
   }
