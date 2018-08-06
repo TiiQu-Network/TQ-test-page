@@ -45,8 +45,13 @@ class App extends Component {
     }
   }
 
-  formula(baseValue, value) {
-    return (baseValue * parseInt(value)) / 2
+  formula(baseValue, value, type) {
+    const calculate = {
+      reputation: () => baseValue + parseInt(value),
+      identity: () => baseValue + parseInt(value),
+      perfomance: () => baseValue + parseInt(value)
+    }
+    return  baseValue > 0 ? calculate[type]() : 0
   }
 
   calculateScores(type, data) {
@@ -94,21 +99,26 @@ class App extends Component {
     }
     this.setState({open: true})
     return math.sum(
-      ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"])),
-      ...education.map(item => this.formula(baseValues.education[type], item.value["degree"])),
-      ...reputation.map(item => this.formula(baseValues.reputation[type], item.value["points"])),
-      ...social.map(item => this.formula(baseValues.social[type], item.length)),
-      ...misc.map(item => this.formula(baseValues.misc[type], item.value["membershiptype"])),
-      ...workexperence.map(item => this.formula(baseValues.workexperence[type], item.length)),
+      ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"], type)),
+      ...education.map(item => this.formula(baseValues.education[type], item.value["degree"], type)),
+      ...reputation.map(item => this.formula(baseValues.reputation[type], item.value["points"], type)),
+      ...social.map(item => this.formula(baseValues.social[type], item.length, type)),
+      ...misc.map(item => this.formula(baseValues.misc[type], item.value["membershiptype"], type)),
+      ...workexperence.map(item => this.formula(baseValues.workexperence[type], item.length, type)),
     )
   }
 
   setScoreValues() {
+    const reputation = this.calculateScores('reputation', this.state)
+    const perfomance = this.calculateScores('perfomance', this.state)
+    const identity = this.calculateScores('identity', this.state)
+    const total = reputation + perfomance + identity
     this.setState({
       scores: {
-        reputation: this.calculateScores('reputation', this.state),
-        perfomance: this.calculateScores('perfomance', this.state),
-        identity: this.calculateScores('identity', this.state)
+        reputation,
+        perfomance,
+        identity,
+        total
       }
     })
   }
