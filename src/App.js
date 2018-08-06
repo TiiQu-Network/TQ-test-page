@@ -40,9 +40,11 @@ class App extends Component {
       })
     }
   }
+
   formula(baseValue, value) {
-    return baseValue + value
+    return ( baseValue * parseInt( value ) ) / 2
   }
+
   calculateScores(type, data){
 
     const {
@@ -86,7 +88,14 @@ class App extends Component {
         reputation: 0
       },
     }
-    return math.sum(...skills.map(item => baseValues.skills[type] * parseInt( item.value["skill-level"] )))
+    return math.sum(
+      ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"])),
+      ...education.map(item => this.formula(baseValues.skills[type], item.value["degree"])),
+      ...reputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
+      ...social.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
+      ...misc.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
+      ...workexperence.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"]))
+    )
   }
 
   setScoreValues() {
@@ -102,7 +111,7 @@ class App extends Component {
     const {
       scores
     } = this.state
-    console.log(scores.reputation)
+    console.log(scores)
     return (
       <div className="container">
         <div className="row">
@@ -150,8 +159,8 @@ class App extends Component {
                 name: "degree",
                 placeholder: "Degree",
                 options: [
-                  {label: "College", value: "college"},
-                  {label: "Enginering", value: "engineer"}
+                  {label: "College", value: "1"},
+                  {label: "Enginering", value: "5"}
                 ]
               },
             ]} />
@@ -236,7 +245,7 @@ class App extends Component {
             ]} />
           </div>
           <div>
-          <Button onClick={this.calculateScores}> Send </Button>
+          <Button onClick={this.setScoreValues}> Send </Button>
           </div>
         </div>
         <Modal>
