@@ -3,10 +3,7 @@ import React, {
 } from 'react';
 import logo from './images/q_icon.png'
 import DynamicField from './DynamicField'
-import {
-  Modal,
-  Button
-} from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import './css/app.css';
 import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
@@ -17,6 +14,7 @@ class App extends Component {
     super()
     this.state = {
       workexperence: [],
+      open: false,
       education: [],
       skills: [],
       social: [],
@@ -32,6 +30,12 @@ class App extends Component {
     this.onChange = this.onChange.bind(this)
     this.calculateScores = this.calculateScores.bind(this)
     this.setScoreValues = this.setScoreValues.bind(this)
+    this.toggle = this.toggle.bind(this)
+  }
+ toggle() {
+    this.setState({
+      open: !this.state.open
+    });
   }
   onChange(name) {
     return value => {
@@ -42,10 +46,10 @@ class App extends Component {
   }
 
   formula(baseValue, value) {
-    return ( baseValue * parseInt( value ) ) / 2
+    return (baseValue * parseInt(value)) / 2
   }
 
-  calculateScores(type, data){
+  calculateScores(type, data) {
 
     const {
       workexperence,
@@ -88,6 +92,7 @@ class App extends Component {
         reputation: 0
       },
     }
+    this.setState({open: true})
     return math.sum(
       ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"])),
       ...education.map(item => this.formula(baseValues.education[type], item.value["degree"])),
@@ -111,7 +116,6 @@ class App extends Component {
     const {
       scores
     } = this.state
-    console.log(scores)
     return (
       <div className="container">
         <div className="row">
@@ -137,7 +141,7 @@ class App extends Component {
             <h3>Your work experience <i className="fas fa-plus text-success" /></h3>
             <br />
             <DynamicField fields={[
-              {type: "text", label: "Workplace", name: "workplace", placeholder: "Workplace name"},
+              {type: "text", label: "Position", name: "position", placeholder: "Position name"},
               {type: "date", label: "From", name: "from", placeholder: "From"},
               {type: "date", label: "To", name: "to", placeholder: "To"},
               {type: "text", label: "Workplace", name: "workplace", placeholder: "Workplace name"},
@@ -238,18 +242,33 @@ class App extends Component {
                 name: "network",
                 placeholder: "Network",
                 options: [
-                  {label: "Professional Membership", value: "Professional"},
-                  {label: "Identity Proof", value: "identityproof"}
+                  {label: "Facebook", value: "1"},
+                  {label: "Twitter", value: "1"},
+                  {label: "Dribble", value: "1"},
+                  {label: "Behance", value: "1"},
+                  {label: "Github", value: "1"}
                 ]
               },
             ]} />
           </div>
-          <div>
-          <Button onClick={this.setScoreValues}> Send </Button>
+          <div className='float-right'  >
+            <Button onClick={this.setScoreValues} className="float-right" color="primary"> Send </Button>
           </div>
         </div>
-        <Modal>
-          {scores.total}
+         <Modal isOpen={this.state.open} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>Your Score Is</ModalHeader>
+          <ModalBody>
+           {
+             Object.keys(scores).map(item => (
+               <div>
+                 <span>{ item }:</span>  <span>{scores[ item ]}</span>
+               </div>
+             ))
+           }
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.toggle}>Confirm</Button>
+          </ModalFooter>
         </Modal>
       </div>
     );
