@@ -30,7 +30,7 @@ class DynamicField extends Component {
   onChangeValue(index, valueName) {
     return (event) => {
       let array = this.state.fieldNumber
-      array[index][valueName] = event.target.value
+      array[index].value[valueName] = event.target.value
       this.setState({fieldNumber: array})
       this.props.onChange && this.props.onChange(array)
     }

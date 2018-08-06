@@ -4,11 +4,13 @@ import React, {
 import logo from './images/q_icon.png'
 import DynamicField from './DynamicField'
 import {
-  Modal
+  Modal,
+  Button
 } from 'reactstrap'
 import './css/app.css';
 import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
+import * as math from 'mathjs'
 
 class App extends Component {
   constructor() {
@@ -29,6 +31,7 @@ class App extends Component {
     }
     this.onChange = this.onChange.bind(this)
     this.calculateScores = this.calculateScores.bind(this)
+    this.setScoreValues = this.setScoreValues.bind(this)
   }
   onChange(name) {
     return value => {
@@ -37,33 +40,69 @@ class App extends Component {
       })
     }
   }
-  calculateScores() {
+  formula(baseValue, value) {
+    return baseValue + value
+  }
+  calculateScores(type, data){
+
     const {
       workexperence,
-      education,
       skills,
       social,
       misc,
-      reputation
-    } = this.state
+      reputation,
+      education
+    } = data
 
     const baseValues = {
-      workexperence: 25,
-      education: 20,
-      skills: 15,
-      social: 10,
-      misc: 15,
-      reputation: 20,
+      workexperence: {
+        perfomance: 15,
+        identity: 10,
+        reputation: 5
+      },
+      education: {
+        perfomance: 25,
+        identity: 0,
+        reputation: 0
+      },
+      skills: {
+        perfomance: 15,
+        identity: 0,
+        reputation: 10
+      },
+      social: {
+        perfomance: 0,
+        identity: 5,
+        reputation: 0
+      },
+      misc: {
+        perfomance: 0,
+        identity: 15,
+        reputation: 0
+      },
+      reputation: {
+        perfomance: 25,
+        identity: 0,
+        reputation: 0
+      },
     }
+    return math.sum(...skills.map(item => baseValues.skills[type] * parseInt( item.value["skill-level"] )))
+  }
 
+  setScoreValues() {
     this.setState({
-
+      scores: {
+        reputation: this.calculateScores('reputation', this.state),
+        perfomance: this.calculateScores('perfomance', this.state),
+        identity: this.calculateScores('identity', this.state)
+      }
     })
   }
   render() {
     const {
       scores
     } = this.state
+    console.log(scores.reputation)
     return (
       <div className="container">
         <div className="row">
@@ -157,7 +196,9 @@ class App extends Component {
             ]} />
             <hr />
             <h3> Skills <i className="fas fa-plus text-success" /></h3>
-            <DynamicField fields={[
+            <DynamicField
+            onChange={this.onChange('skills')}
+            fields={[
               {type: "text", label: "Skill", name: "skill", placeholder: "Skill"},
               {
                 type: "select",
@@ -165,8 +206,16 @@ class App extends Component {
                 name: "skill-level",
                 placeholder: "Skill Level",
                 options: [
-                  {label: "Professional Membership", value: "Professional"},
-                  {label: "Identity Proof", value: "identityproof"}
+                  {label: "1", value: "1"},
+                  {label: "2", value: "2"},
+                  {label: "3", value: "3"},
+                  {label: "4", value: "4"},
+                  {label: "5", value: "5"},
+                  {label: "6", value: "6"},
+                  {label: "7", value: "7"},
+                  {label: "8", value: "8"},
+                  {label: "9", value: "9"},
+                  {label: "10", value: "10"}
                 ]
               },
             ]} />
@@ -185,6 +234,9 @@ class App extends Component {
                 ]
               },
             ]} />
+          </div>
+          <div>
+          <Button onClick={this.calculateScores}> Send </Button>
           </div>
         </div>
         <Modal>
