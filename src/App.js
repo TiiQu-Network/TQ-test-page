@@ -90,11 +90,11 @@ class App extends Component {
     }
     return math.sum(
       ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"])),
-      ...education.map(item => this.formula(baseValues.skills[type], item.value["degree"])),
-      ...reputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
-      ...social.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
-      ...misc.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"])),
-      ...workexperence.eputation.map(item => this.formula(baseValues.skills[type], item.value["points"]))
+      ...education.map(item => this.formula(baseValues.education[type], item.value["degree"])),
+      ...reputation.map(item => this.formula(baseValues.reputation[type], item.value["points"])),
+      ...social.map(item => this.formula(baseValues.social[type], item.length)),
+      ...misc.map(item => this.formula(baseValues.misc[type], item.value["membershiptype"])),
+      ...workexperence.map(item => this.formula(baseValues.workexperence[type], item.length)),
     )
   }
 
@@ -198,8 +198,8 @@ class App extends Component {
                 name: "membershiptype",
                 placeholder: "Select Information Type",
                 options: [
-                  {label: "Professional Membership", value: "Professional"},
-                  {label: "Identity Proof", value: "identityproof"}
+                  {label: "Professional Membership", value: "5"},
+                  {label: "Identity Proof", value: "2"}
                 ]
               },
             ]} />
