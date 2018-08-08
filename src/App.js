@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import logo from './images/q_icon.png'
 import DynamicField from './DynamicField'
+import GraphDetails from './GraphDetails'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import './css/app.css';
 import './css/bootstrap.min.css';
@@ -271,13 +272,12 @@ class App extends Component {
            {
              Object.keys(scores).map(item => (
                <div>
-                 <span>{ item }:</span>  <span>{scores[ item ]}</span>
+                <GraphDetails tqScores={[{ label: item, value: scores[item] }]} />
                </div>
              ))
            }
-          </ModalBody>
+           !important</ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Confirm</Button>
           </ModalFooter>
         </Modal>
       </div>
