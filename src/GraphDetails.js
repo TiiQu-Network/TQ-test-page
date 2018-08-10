@@ -246,3 +246,5 @@ class GraphDetails extends Component {
   }
 
 }
+
+export default GraphDetails
