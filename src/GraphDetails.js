@@ -134,13 +134,13 @@ class GraphDetails extends Component {
       const arcsDistance = ARC_DISTANCE
       const tqScoreLength = tqScores.length
       const baseRadio = INITIAL_RADIO - (tqScoreLength > 10 ? (tqScoreLength - 10) * arcsDistance : 0)
-      const breakPointsDegrees = this.DEGREES_BREAKPOINTS
+      const breakPointsDegrees = DEGREES_BREAKPOINTS
       const lastRadio = baseRadio + (arcsDistance * (tqScoreLength + 3))
       const renderDistance = 8
 
       const arcs = this.buildArcs(maxDegrees, baseRadio, tqScoreLength + 3, arcsDistance)
       const breakpoints = this.buildBreakPoints(breakPointsDegrees, tqScoreLength + 3, baseRadio, lastRadio, -10)
-      const arcsForRender = arcs.slice(this.arcs.length - tqScoreLength)
+      const arcsForRender = arcs.slice(arcs.length - tqScoreLength)
       const scoreRender = this.buildArcsValues(1000, breakPointsDegrees['1000tq'], scores, arcsForRender, renderDistance)
 
       this.ARC_DISTANCE = ARC_DISTANCE
@@ -183,19 +183,19 @@ class GraphDetails extends Component {
                   <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[1], 'rotate(68.5)') } style={{opacity: 1}} y={-20}>200 {'{'}{'{'}unit{'}'}{'}'}</text>
                 </g>
                 <g className="radial_axis_tick">
-                  <path className="QNXttvHX_5" transform={this.getcenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[2]) } />
+                  <path className="QNXttvHX_5" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[2]) } />
                   <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[2],'rotate(-43)') } style={{opacity: 1}} y={20}>400 {'{'}{'{'}unit{'}'}{'}'}</text>
                 </g>
                 <g className="radial_axis_tick">
-                  <path className="QNXttvHX_6" transform={this.getcenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[3]) } />
+                  <path className="QNXttvHX_6" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[3]) } />
                   <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[3],'rotate(26)' ) } style={{opacity: 1}} y={20}>600 {'{'}{'{'}unit{'}'}{'}'}</text>
                 </g>
                 <g className="radial_axis_tick">
-                  <path className="QNXttvHX_7" transform={this.getcenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[4]) } />
+                  <path className="QNXttvHX_7" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[4]) } />
                   <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[4],'rotate(-86)') } style={{opacity: 1}} y={-20}>800 {'{'}{'{'}unit{'}'}{'}'}</text>
                 </g>
                 <g className="radial_axis_tick">
-                  <path className="QNXttvHX_8" transform={this.getcenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[5]) } />
+                  <path className="QNXttvHX_8" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[5]) } />
                   <text textAnchor="middle" dominantBaseline="central" transform="getTransformation(breakpoints[5],'rotate(-17)')" style={{opacity: 1}} y={-20}>1000 {'{'}{'{'}unit{'}'}{'}'}</text>
                 </g>
               </g>

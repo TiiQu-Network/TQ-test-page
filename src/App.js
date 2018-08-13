@@ -262,9 +262,7 @@ class App extends Component {
               },
             ]} />
           </div>
-          <div className='float-right'  >
-            <Button onClick={this.setScoreValues} className="float-right" color="primary"> Send </Button>
-          </div>
+          <Button onClick={this.setScoreValues} style={{margin: '15px'}} color="primary"> Send </Button>
         </div>
          <Modal isOpen={this.state.open} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Your Score Is</ModalHeader>
