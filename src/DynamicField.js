@@ -38,7 +38,8 @@ class DynamicField extends Component {
 
   render() {
     const {
-      fields
+      fields,
+      required
     } = this.props
     return this.state.fieldNumber.map((field, index) => (
       <div className="form-row align-items-center">
@@ -52,7 +53,7 @@ class DynamicField extends Component {
                     type={item.type}
                     name={item.name}
                     className="form-control mb-2"
-                    required
+                    required={required}
                     placeholder={item.placeholder}
                     onChange={this.onChangeValue(index, item.name)}
                     value={field.value[item.name]} />
@@ -60,7 +61,7 @@ class DynamicField extends Component {
                 {
                   item.type === 'select' &&
                     <select
-                      required
+                      required={required}
                       className="form-control mb-2"
                       value={field.value[item.name]}
                       onChange={this.onChangeValue(index, item.name)}>
