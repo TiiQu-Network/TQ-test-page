@@ -16,6 +16,10 @@ class GraphDetails extends Component {
     this.getCenter = this.getCenter.bind(this)
     this.getTransformation = this.getTransformation.bind(this)
   }
+  componentDidMount() {
+
+    console.log(this.props.tqScores)
+  }
   buildArcs(maxDegrees, baseRadio, scoreLength, arcsDistance) {
     const arcs = Array.from({
       length: scoreLength
@@ -154,8 +158,6 @@ class GraphDetails extends Component {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             id="main_svg"
-            height={900}
-            width={1803}
             style={{opacity: 1}}
             version="1.1"
             viewBox="0 0 1803 900"

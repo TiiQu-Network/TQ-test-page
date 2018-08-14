@@ -54,3 +54,6 @@ a.upload-box{
 a.upload-box:hover{
     color:#ffffff!important;
 }
+.width-80 .modal-dialog {
+  max-width: 95% !important;
+}

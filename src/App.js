@@ -267,7 +267,7 @@ class App extends Component {
               <Button style={{margin: '15px'}} color="primary"> Send </Button>
             </div>
           </form>
-         <Modal isOpen={this.state.open} toggle={this.toggle} style={{width: '80%'}}>
+         <Modal isOpen toggle={this.toggle} wrapClassName="width-80">
           <ModalHeader toggle={this.toggle}>Your Score Is</ModalHeader>
           <ModalBody>
            {
