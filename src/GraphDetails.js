@@ -1,6 +1,7 @@
 import React, {
   Component
 } from 'react'
+import './GraphDetails.css'
 
 class GraphDetails extends Component {
   constructor(props) {
@@ -148,8 +149,18 @@ class GraphDetails extends Component {
       this.center = center
 
       return (
-          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="main_svg" height={900} width={1803} style={{opacity: 1}} version="1.1" viewBox="0 0 1803 900">
-        <svg x={200}>
+          <svg
+            style={{width: '100%'}}
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            id="main_svg"
+            height={900}
+            width={1803}
+            style={{opacity: 1}}
+            version="1.1"
+            viewBox="0 0 1803 900"
+          >
+        <svg style={{width: '100%'}} x={200}>
           <defs>
             <filter id="drop-shadow" x={0} y={0} width="200%" height="200%">
               <feOffset in="SourceAlpha" dx="2.5" dy="2.5" result="offOut" />
@@ -164,7 +175,7 @@ class GraphDetails extends Component {
             <rect className="timeline_frame" width={1703} height={695} style={{opacity: '0.1', stroke: 'none', strokeWidth: '0.5px', cursor: 'auto'}} />
             <g className="timeline_facet">
               <rect className="timeline_facet_frame" width={1703} height={0} transform="translate(851.5,347.5)" />
-              <title>{'{'}{'{'}title{'}'}{'}'}</title>
+              <title>{title}</title>
               <text className="facet_title" dy="-0.5em" transform="translate(851.5,40)" style={{textAnchor: 'middle'}}>{'{'}{'{'}title{'}'}{'}'}</text>
               <g className="faceted_radial_axis" transform="translate(0,25)" style={{opacity: 1}}>
                 {
