@@ -153,7 +153,7 @@ class App extends Component {
               <div className="col-12">
                 <h3>Your work experience <i className="fas fa-plus text-success" /></h3>
                 <br />
-                <DynamicField fields={[
+                <DynamicField required fields={[
                   {type: "text", label: "Position", name: "position", placeholder: "Position name"},
                   {type: "date", label: "From", name: "from", placeholder: "From"},
                   {type: "date", label: "To", name: "to", placeholder: "To"},
@@ -168,7 +168,7 @@ class App extends Component {
                 <hr />
                 <h3>Your education <i className="fas fa-plus text-success" /></h3>
                 <br />
-                <DynamicField fields={[
+                <DynamicField required fields={[
                   {type: "text", label: "University", name: "university", placeholder: "University name"},
                   {
                     type: "select",
@@ -183,7 +183,7 @@ class App extends Component {
                 ]} />
                 <hr />
                 <h3>Reputation <i className="fas fa-plus text-success" /></h3>
-                <DynamicField fields={[
+                <DynamicField required fields={[
                   {type: "number", label: "Points", name: "points", placeholder: "Points"},
                   {
                     type: "select",
