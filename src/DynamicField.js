@@ -52,6 +52,7 @@ class DynamicField extends Component {
                     type={item.type}
                     name={item.name}
                     className="form-control mb-2"
+                    required
                     placeholder={item.placeholder}
                     onChange={this.onChangeValue(index, item.name)}
                     value={field.value[item.name]} />
@@ -59,6 +60,7 @@ class DynamicField extends Component {
                 {
                   item.type === 'select' &&
                     <select
+                      required
                       className="form-control mb-2"
                       value={field.value[item.name]}
                       onChange={this.onChangeValue(index, item.name)}>
