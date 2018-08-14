@@ -176,27 +176,27 @@ class GraphDetails extends Component {
                 }
                 <g className="radial_axis_tick">
                   <path className="QNXttvHX_3" transform={ this.getCenter() } style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[0]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[0]) } style={{opacity: 1}} y={-20}>0 {'{'}{'{'}unit{'}'}{'}'}</text>
+                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[0]) } style={{opacity: 1}} y={-20}>0 {unit}</text>
                 </g>
                 <g className="radial_axis_tick">
                   <path className="QNXttvHX_4" transform={ this.getCenter() } d={ this.getBreakPointString(breakpoints[1]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[1], 'rotate(68.5)') } style={{opacity: 1}} y={-20}>200 {'{'}{'{'}unit{'}'}{'}'}</text>
+                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[1], 'rotate(68.5)') } style={{opacity: 1}} y={-20}>200 {unit}</text>
                 </g>
                 <g className="radial_axis_tick">
                   <path className="QNXttvHX_5" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[2]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[2],'rotate(-43)') } style={{opacity: 1}} y={20}>400 {'{'}{'{'}unit{'}'}{'}'}</text>
+                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[2],'rotate(-43)') } style={{opacity: 1}} y={20}>400 {unit}</text>
                 </g>
                 <g className="radial_axis_tick">
                   <path className="QNXttvHX_6" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[3]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[3],'rotate(26)' ) } style={{opacity: 1}} y={20}>600 {'{'}{'{'}unit{'}'}{'}'}</text>
+                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[3],'rotate(26)' ) } style={{opacity: 1}} y={20}>600 {unit}</text>
                 </g>
                 <g className="radial_axis_tick">
                   <path className="QNXttvHX_7" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[4]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[4],'rotate(-86)') } style={{opacity: 1}} y={-20}>800 {'{'}{'{'}unit{'}'}{'}'}</text>
+                  <text textAnchor="middle" dominantBaseline="central" transform={ this.getTransformation(breakpoints[4],'rotate(-86)') } style={{opacity: 1}} y={-20}>800 {unit}</text>
                 </g>
                 <g className="radial_axis_tick">
-                  <path className="QNXttvHX_8" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[5]) } />
-                  <text textAnchor="middle" dominantBaseline="central" transform="getTransformation(breakpoints[5],'rotate(-17)')" style={{opacity: 1}} y={-20}>1000 {'{'}{'{'}unit{'}'}{'}'}</text>
+                <path className="QNXttvHX_8" transform={this.getCenter()} style={{opacity: 1}} d={ this.getBreakPointString(breakpoints[5]) } />
+                <text textAnchor="middle" dominantBaseline="central" transform="getTransformation(breakpoints[5],'rotate(-17)')" style={{opacity: 1}} y={-20}>1000 {unit}</text>
                 </g>
               </g>
             </g>
