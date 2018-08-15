@@ -1,0 +1,102 @@
+body, input, textarea, select, text {
+  font-family: "Segoe UI Web Regular", wf_segoe-ui_normal, "Segoe UI", "Segoe UI Symbol", Myriad, Calibri, UnDotum, Optima, Tahoma, "Century Gothic", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, sans-serif;
+  margin: 0px;
+}
+text {
+  color: rgb(102, 102, 102);
+  user-select: none;
+  cursor: default;
+}
+.legend {
+  margin: 0px;
+  fill: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+.legend_rect {
+  fill: rgb(255, 255, 255);
+  stroke: rgb(170, 170, 170);
+  stroke-width: 1px;
+}
+.legend_title {
+  fill: rgb(102, 102, 102);
+  font-size: 12px;
+  font-weight: bolder;
+  font-stretch: expanded;
+}
+.legend_element_g text {
+  fill: rgb(102, 102, 102);
+  font-size: 12px;
+  cursor: pointer;
+}
+.time_elapsed {
+  fill: rgb(170, 170, 170);
+  stroke: rgb(170, 170, 170);
+  stroke-width: 0.5px;
+}
+.timeline_frame {
+  fill: transparent;
+  opacity: 0.1;
+  stroke: none;
+}
+.timeline_facet_frame {
+  fill: none;
+  stroke: rgb(153, 153, 153);
+  stroke-width: 0.5px;
+}
+.x_axis path, .interim_duration_axis path, .timeline_axis path {
+  fill: none;
+  stroke: rgb(153, 153, 153);
+  stroke-width: 1px;
+  z-index: -1;
+}
+.radial_axis_tick path {
+  fill: none;
+  stroke: rgb(153, 153, 153);
+  stroke-width: 1px;
+  z-index: -1;
+}
+.x_axis line, .interim_duration_axis line, .timeline_axis line {
+  fill: none;
+  stroke: rgb(153, 153, 153);
+  shape-rendering: crispEdges;
+  stroke-width: 1px;
+  stroke-dasharray: 2;
+  z-index: -1;
+}
+.x_axis text, .interim_duration_axis text, .timeline_axis text {
+  font-size: 12px;
+  z-index: 1;
+}
+.start_end_label, .radial_axis_tick, .weekday_label {
+  font-size: 12px;
+}
+.facet_title, .segment_title {
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: extra-expanded;
+}
+.rad_track {
+  stroke: rgb(153, 153, 153);
+  stroke-width: 1px;
+  fill: none;
+  z-index: -1;
+}
+.time_elapsed {
+  stroke: rgb(170, 170, 170);
+  stroke-width: 0.5px;
+  fill: rgb(204, 204, 204);
+}
+.path_end_indicator {
+  fill: none;
+  stroke: rgb(255, 255, 255);
+}
+#timecurve {
+  fill: none;
+  stroke-width: 10px;
+  stroke: rgb(119, 119, 119);
+  opacity: 0.2;
+  transition: all 0.5s ease;
+}
