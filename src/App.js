@@ -22,9 +22,9 @@ class App extends Component {
       misc: [],
       reputation: [],
       scores: {
-        reputation: 0,
-        identity: 0,
-        perfomance: 0,
+        reputation: [],
+        identity: [],
+        perfomance: [],
         total: 0
       }
     }
@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   calculateScores(type) {
-
     const {
       workexperence,
       skills,
@@ -62,28 +61,74 @@ class App extends Component {
 
     const baseValues = {
       reputation: {
-
+        yearsOfExperience: 5,
+        skills: 2,
+        reputation
       },
       identity: {
-
+        social: 5,
+        profileInformation: 10,
+        education: 15,
+        misc: 10
       },
       perfomance: {
-
+        yearsOfExperience: 10,
+        skills: 5
       }
     }
+
+    const calculate = {
+      reputation: () => Object.keys(baseValues.reputation).map(item => {
+        const toCalculate = baseValues.reputation[item]
+        const scores = {
+          reputation: () => math.sum(...toCalculate.map(item => item.value.source)),
+          yearsOfExperience: () => yearsOfExperience * toCalculate,
+          skills: () => math.sum( ...skills.map(item => item.value[ 'skill-level' ]) ) + ( skills.length * toCalculate ),
+
+        }
+        return {
+          label: item,
+          value: scores[item]()
+        }
+      }),
+      identity: () => Object.keys(baseValues.identity).map( item => {
+        const toCalculate = baseValues.identity[item]
+        const scores = {
+          social: () => 0,
+          profileInformation: () => 0,
+          education: () => 0,
+          misc: () => 0
+        }
+
+        return {
+          label: item,
+          value: scores[item]()
+        }
+
+      }),
+      perfomance: () => Object.keys(baseValues.perfomance).map(item => {
+        const toCalculate = baseValues.perfomance[item]
+        const scores = {
+          skills: () => 0,
+          yearsOfExperience: () => 0,
+        }
+        return {
+          label: item,
+          value: scores[item]()
+        }
+      }),
+    }
     this.setState({open: true})
+    return calculate[type]()
+
   }
 
   setScoreValues(e) {
     e.preventDefault()
     const reputation = this.calculateScores('reputation')
-    const perfomance = this.calculateScores('perfomance')
-    const identity = this.calculateScores('identity')
     this.setState({
       scores: {
-        reputation,
-        perfomance,
-        identity
+        reputation
       }
     })
   }
@@ -236,7 +281,7 @@ class App extends Component {
            {
              Object.keys(scores).map(item => (
                <div style={{width: '100%'}}>
-                <GraphDetails title={item}  tqScores={[{ label: item, value: scores[item] }]} />
+                <GraphDetails title={item}  tqScores={scores[item]} />
                </div>
              ))
            }
