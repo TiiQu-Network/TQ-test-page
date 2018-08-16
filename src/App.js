@@ -46,16 +46,7 @@ class App extends Component {
     }
   }
 
-  formula(baseValue, value, type) {
-    const calculate = {
-      reputation: () => baseValue + parseInt(value),
-      identity: () => baseValue + parseInt(value),
-      perfomance: () => baseValue + parseInt(value)
-    }
-    return  baseValue > 0 ? calculate[type]() : 0
-  }
-
-  calculateScores(type, data) {
+  calculateScores(type) {
 
     const {
       workexperence,
@@ -64,63 +55,35 @@ class App extends Component {
       misc,
       reputation,
       education
-    } = data
+    } = this.state
+    const fromExperience = workexperence.map(item => parseInt(item.value.from.split('-')[0]))
+    const toExperience = workexperence.map(item => parseInt(item.value.to.split('-')[0]))
+    const yearsOfExperience = Math.max(...toExperience) - Math.min(...fromExperience)
 
     const baseValues = {
-      workexperence: {
-        perfomance: 15,
-        identity: 10,
-        reputation: 5
-      },
-      education: {
-        perfomance: 25,
-        identity: 0,
-        reputation: 0
-      },
-      skills: {
-        perfomance: 15,
-        identity: 0,
-        reputation: 10
-      },
-      social: {
-        perfomance: 0,
-        identity: 5,
-        reputation: 0
-      },
-      misc: {
-        perfomance: 0,
-        identity: 15,
-        reputation: 0
-      },
       reputation: {
-        perfomance: 25,
-        identity: 0,
-        reputation: 0
+
       },
+      identity: {
+
+      },
+      perfomance: {
+
+      }
     }
     this.setState({open: true})
-    return math.sum(
-      ...skills.map(item => this.formula(baseValues.skills[type], item.value["skill-level"], type)),
-      ...education.map(item => this.formula(baseValues.education[type], item.value["degree"], type)),
-      ...reputation.map(item => this.formula(baseValues.reputation[type], item.value["points"], type)),
-      ...social.map(item => this.formula(baseValues.social[type], item.length, type)),
-      ...misc.map(item => this.formula(baseValues.misc[type], item.value["membershiptype"], type)),
-      ...workexperence.map(item => this.formula(baseValues.workexperence[type], item.length, type)),
-    )
   }
 
   setScoreValues(e) {
     e.preventDefault()
-    const reputation = this.calculateScores('reputation', this.state)
-    const perfomance = this.calculateScores('perfomance', this.state)
-    const identity = this.calculateScores('identity', this.state)
-    const total = reputation + perfomance + identity
+    const reputation = this.calculateScores('reputation')
+    const perfomance = this.calculateScores('perfomance')
+    const identity = this.calculateScores('identity')
     this.setState({
       scores: {
         reputation,
         perfomance,
-        identity,
-        total
+        identity
       }
     })
   }
