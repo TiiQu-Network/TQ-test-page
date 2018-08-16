@@ -17,7 +17,6 @@ class GraphDetails extends Component {
     this.getTransformation = this.getTransformation.bind(this)
   }
   componentDidMount() {
-
     console.log(this.props.tqScores)
   }
   buildArcs(maxDegrees, baseRadio, scoreLength, arcsDistance) {
@@ -26,7 +25,6 @@ class GraphDetails extends Component {
     })
     const theta = maxDegrees * Math.PI / 180
 
-    const newRadio = baseRadio + arcsDistance
     return arcs.map((item, index) => {
       let P1 = {
         x: 0,
@@ -178,7 +176,7 @@ class GraphDetails extends Component {
             <g className="timeline_facet">
               <rect className="timeline_facet_frame" width={1703} height={0} transform="translate(851.5,347.5)" />
               <title>{title}</title>
-              <text className="facet_title" dy="-0.5em" transform="translate(851.5,40)" style={{textAnchor: 'middle'}}>{'{'}{'{'}title{'}'}{'}'}</text>
+              <text className="facet_title" dy="-0.5em" transform="translate(851.5,40)" style={{textAnchor: 'middlerr'}}>{title}</text>
               <g className="faceted_radial_axis" transform="translate(0,25)" style={{opacity: 1}}>
                 {
                   arcs.map(arc => (
@@ -221,7 +219,7 @@ class GraphDetails extends Component {
             ))
       }
           </g>
-          <svg onclick="location.href = '1_index.svg';" height={175} width={144} y={20} id="legend_panel" className="legend" x={20}>
+          <svg height={175} width={144} y={20} id="legend_panel" className="legend" x={20}>
             <rect className="legend_rect" height={135} width={119} filter="none">
               <title>Click on a color swatch to select a custom color for that category.</title>
             </rect>

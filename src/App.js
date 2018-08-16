@@ -10,6 +10,11 @@ import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
 import * as math from 'mathjs'
 
+const strokes = {
+  reputation: 'yellow',
+  identify: 'green',
+  perfomance: 'red'
+}
 class App extends Component {
   constructor() {
     super()
@@ -80,10 +85,12 @@ class App extends Component {
     const calculate = {
       reputation: () => Object.keys(baseValues.reputation).map(item => {
         const toCalculate = baseValues.reputation[item]
+        debugger;
         const scores = {
-          reputation: () => math.sum(...toCalculate.map(item => item.value.source)),
+          reputation: () => toCalculate.length > 1 ? math.sum(...toCalculate.map(item => parseInt(item.value.source))) :
+          ( toCalculate[0] ? toCalculate[0].value.source : 0 ),
           yearsOfExperience: () => yearsOfExperience * toCalculate,
-          skills: () => math.sum( ...skills.map(item => item.value[ 'skill-level' ]) ) + ( skills.length * toCalculate ),
+          skills: () => math.sum( ...skills.map(item => parseInt(item.value[ 'skill-level' ])) ) + ( skills.length * toCalculate ),
 
         }
         return {
@@ -281,7 +288,7 @@ class App extends Component {
            {
              Object.keys(scores).map(item => (
                <div style={{width: '100%'}}>
-                <GraphDetails title={item}  tqScores={scores[item]} />
+                <GraphDetails title={item}  tqScores={scores[item]} stroke={strokes[item]}/>
                </div>
              ))
            }
