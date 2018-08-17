@@ -127,11 +127,10 @@ class App extends Component {
             toCalculate + misc.length + (
               misc.length > 1 ?
               math.sum(...misc.map(item => item.value.membershiptype)) :
-              (misc[0] ? parseInt(misc[0].value.membershiptype) : 0)
+              (misc[0] ? parseInt(misc[0].value.degree) : 0)
             )
           )
         }
-
         return {
           label: item,
           value: scores[item]()
@@ -141,8 +140,14 @@ class App extends Component {
       perfomance: () => Object.keys(baseValues.perfomance).map(item => {
         const toCalculate = baseValues.perfomance[item]
         const scores = {
-          skills: () => 0,
-          yearsOfExperience: () => 0,
+          yearsOfExperience: () => yearsOfExperience * toCalculate,
+          skills: () => skills.length > 1 ? math.sum(...skills.map(item => parseInt(item.value['skill-level']))) + (skills.length * toCalculate) :
+            (skills[0] ? parseInt(skills[0].value['skill-level']) : 0),
+
+        }
+        return {
+          label: item,
+          value: scores[item]()
         }
         return {
           label: item,
@@ -161,10 +166,12 @@ class App extends Component {
     e.preventDefault()
     const reputation = this.calculateScores('reputation')
     const identity = this.calculateScores('identity')
+    const perfomance = this.calculateScores('perfomance')
     this.setState({
       scores: {
         reputation,
-        identity
+        identity,
+        perfomance
       }
     })
   }
