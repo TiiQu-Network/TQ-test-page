@@ -4,16 +4,22 @@ import React, {
 import logo from './images/q_icon.png'
 import DynamicField from './DynamicField'
 import GraphDetails from './GraphDetails'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from 'reactstrap'
 import './css/app.css';
 import './css/bootstrap.min.css';
 import './css/fa-svg-with-js.css';
 import * as math from 'mathjs'
 
 const strokes = {
-  reputation: 'yellow',
-  identify: 'green',
-  perfomance: 'red'
+  reputation: 'rgb(68, 179, 194)',
+  identify: 'rgb(219, 201, 24)',
+  perfomance: 'rgb(228, 86, 65)'
 }
 class App extends Component {
   constructor() {
@@ -38,7 +44,7 @@ class App extends Component {
     this.setScoreValues = this.setScoreValues.bind(this)
     this.toggle = this.toggle.bind(this)
   }
- toggle() {
+  toggle() {
     this.setState({
       open: !this.state.open
     });
@@ -60,6 +66,7 @@ class App extends Component {
       reputation,
       education
     } = this.state
+    const formSections = [skills, social, workexperence, reputation, education].filter(item => item.length > 0)
     const fromExperience = workexperence.map(item => parseInt(item.value.from.split('-')[0]))
     const toExperience = workexperence.map(item => parseInt(item.value.to.split('-')[0]))
     const yearsOfExperience = Math.max(...toExperience) - Math.min(...fromExperience)
@@ -85,12 +92,12 @@ class App extends Component {
     const calculate = {
       reputation: () => Object.keys(baseValues.reputation).map(item => {
         const toCalculate = baseValues.reputation[item]
-        debugger;
         const scores = {
           reputation: () => toCalculate.length > 1 ? math.sum(...toCalculate.map(item => parseInt(item.value.source))) :
-          ( toCalculate[0] ? toCalculate[0].value.source : 0 ),
+            (toCalculate[0] ? toCalculate[0].value.source : 0),
           yearsOfExperience: () => yearsOfExperience * toCalculate,
-          skills: () => math.sum( ...skills.map(item => parseInt(item.value[ 'skill-level' ])) ) + ( skills.length * toCalculate ),
+          skills: () => skills.length > 1 ? math.sum(...skills.map(item => parseInt(item.value['skill-level']))) + (skills.length * toCalculate) :
+            (skills[0] ? parseInt(skills[0].value['skill-level']) : 0),
 
         }
         return {
@@ -98,13 +105,31 @@ class App extends Component {
           value: scores[item]()
         }
       }),
-      identity: () => Object.keys(baseValues.identity).map( item => {
+      identity: () => Object.keys(baseValues.identity).map(item => {
         const toCalculate = baseValues.identity[item]
         const scores = {
-          social: () => 0,
-          profileInformation: () => 0,
-          education: () => 0,
-          misc: () => 0
+          social: () => (
+            toCalculate * social.length + (
+              social.length > 1 ?
+              math.sum(...social.map(item => parseInt(item.value.network))) :
+              (social[0] ? parseInt(social[0].value.network) : 0)
+            )
+          ),
+          profileInformation: () => formSections.length * toCalculate,
+          education: () => (
+            (toCalculate * education.length) + (
+              education.length > 1 ?
+              math.sum(...education.map(item => parseInt(item.value.degree))) :
+              (education[0] ? parseInt(education[0].value.degree) : 0)
+            )
+          ),
+          misc: () => (
+            toCalculate + misc.length + (
+              misc.length > 1 ?
+              math.sum(...misc.map(item => item.value.membershiptype)) :
+              (misc[0] ? parseInt(misc[0].value.membershiptype) : 0)
+            )
+          )
         }
 
         return {
@@ -125,7 +150,9 @@ class App extends Component {
         }
       }),
     }
-    this.setState({open: true})
+    this.setState({
+      open: true
+    })
     return calculate[type]()
 
   }
@@ -133,9 +160,11 @@ class App extends Component {
   setScoreValues(e) {
     e.preventDefault()
     const reputation = this.calculateScores('reputation')
+    const identity = this.calculateScores('identity')
     this.setState({
       scores: {
-        reputation
+        reputation,
+        identity
       }
     })
   }
@@ -168,14 +197,16 @@ class App extends Component {
               <div className="col-12">
                 <h3>Your work experience <i className="fas fa-plus text-success" /></h3>
                 <br />
-                <DynamicField required fields={[
+                <DynamicField
+                required
+                fields={[
                   {type: "text", label: "Position", name: "position", placeholder: "Position name"},
                   {type: "date", label: "From", name: "from", placeholder: "From"},
                   {type: "date", label: "To", name: "to", placeholder: "To"},
                   {type: "text", label: "Workplace", name: "workplace", placeholder: "Workplace name"},
                 ]}
                 onChange={this.onChange('workexperence')}
-          />
+                />
                 <br />
                 <div className="alert alert-info">
                   <p><i className="fas fa-exclamation-circle" /> When estimating your work experience rating imagine what score out of 10 would your boss give you.</p>
@@ -183,7 +214,10 @@ class App extends Component {
                 <hr />
                 <h3>Your education <i className="fas fa-plus text-success" /></h3>
                 <br />
-                <DynamicField required fields={[
+                <DynamicField
+                  onChange={this.onChange('education')}
+                  required
+                  fields={[
                   {type: "text", label: "University", name: "university", placeholder: "University name"},
                   {
                     type: "select",
@@ -195,22 +229,24 @@ class App extends Component {
                       {label: "Enginering", value: "5"}
                     ]
                   },
-                ]} />
+                  ]} />
                 <hr />
                 <h3>Reputation <i className="fas fa-plus text-success" /></h3>
-                <DynamicField required fields={[
-                  {type: "number", label: "Points", name: "points", placeholder: "Points"},
-                  {
-                    type: "select",
-                    label: "Source",
-                    name: "source",
-                    placeholder: "Source",
-                    options: [
-                      {label: "Academic Paper", value: "academic"},
-                      {label: "Github", value: "github"},
-                      {label: "StackOverflow", value: "stackoverflow"}
-                    ]
-                  },
+                <DynamicField required
+                  onChange={this.onChange('reputation')}
+                  fields={[
+                    {type: "number", label: "Points", name: "points", placeholder: "Points"},
+                    {
+                      type: "select",
+                      label: "Source",
+                      name: "source",
+                      placeholder: "Source",
+                      options: [
+                        {label: "Academic Paper", value: "academic"},
+                        {label: "Github", value: "github"},
+                        {label: "StackOverflow", value: "stackoverflow"}
+                      ]
+                    },
                 ]} />
                 <div className="alert alert-info">
                   <p><i className="fas fa-exclamation-circle" /> Please enter your score for the relevant reputation examples (if applicable).</p>
@@ -222,19 +258,21 @@ class App extends Component {
                 </div>
                 <hr />
                 <h3>Misc <i className="fas fa-plus text-success" /></h3>
-                <DynamicField fields={[
-                  {type: "text", label: "Institution Name", name: "membership", placeholder: "Membership"},
-                  {
-                    type: "select",
-                    label: "Membership Type",
-                    name: "membershiptype",
-                    placeholder: "Select Information Type",
-                    options: [
-                      {label: "Professional Membership", value: "5"},
-                      {label: "Identity Proof", value: "2"}
-                    ]
-                  },
-                ]} />
+                <DynamicField
+                  onChange={this.onChange('misc')}
+                  fields={[
+                    {type: "text", label: "Institution Name", name: "membership", placeholder: "Membership"},
+                    {
+                      type: "select",
+                      label: "Membership Type",
+                      name: "membershiptype",
+                      placeholder: "Select Information Type",
+                      options: [
+                        {label: "Professional Membership", value: "5"},
+                        {label: "Identity Proof", value: "2"}
+                      ]
+                    },
+                  ]} />
                 <hr />
                 <h3> Skills <i className="fas fa-plus text-success" /></h3>
                 <DynamicField
@@ -262,22 +300,24 @@ class App extends Component {
                 ]} />
                 <hr />
                 <h3> Social Networks <i className="fas fa-plus text-success" /></h3>
-                <DynamicField fields={[
-                  {type: "text", label: "Institution Name", name: "url", placeholder: "url"},
-                  {
-                    type: "select",
-                    label: "Network",
-                    name: "network",
-                    placeholder: "Network",
-                    options: [
-                      {label: "Facebook", value: "1"},
-                      {label: "Twitter", value: "1"},
-                      {label: "Dribble", value: "1"},
-                      {label: "Behance", value: "1"},
-                      {label: "Github", value: "1"}
-                    ]
-                  },
-                ]} />
+                <DynamicField
+                  onChange={this.onChange('social')}
+                  fields={[
+                    {type: "text", label: "Institution Name", name: "url", placeholder: "url"},
+                    {
+                      type: "select",
+                      label: "Network",
+                      name: "network",
+                      placeholder: "Network",
+                      options: [
+                        {label: "Facebook", value: "1"},
+                        {label: "Twitter", value: "1"},
+                        {label: "Dribble", value: "1"},
+                        {label: "Behance", value: "1"},
+                        {label: "Github", value: "1"}
+                      ]
+                    },
+                  ]} />
               </div>
               <Button style={{margin: '15px'}} color="primary"> Send </Button>
             </div>
