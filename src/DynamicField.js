@@ -77,8 +77,8 @@ class DynamicField extends Component {
             ))
         }
         <div className="col-auto">
-          {index === 0 && <button className="btn btn-success mb-2" onClick={this.addField}>+</button>}
-          {index > 0 && <button className="btn btn-danger mb-2" onClick={this.removeField.bind(this, index)}>-</button>}
+          {index === 0 && <button className="btn btn-success mb-2" onClick={this.addField} type='button' >+</button>}
+          {index > 0 && <button className="btn btn-danger mb-2" onClick={this.removeField.bind(this, index)} type='button'>-</button>}
         </div>
       </div>
     ))
