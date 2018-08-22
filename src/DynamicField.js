@@ -63,9 +63,9 @@ class DynamicField extends Component {
                     <select
                       required={required}
                       className="form-control mb-2"
-                      value={field.value[item.name]}
+                      value={field.value[item.name] || item.defaultValue}
                       onChange={this.onChangeValue(index, item.name)}>
-                      <option value=''>{item.placeholder}</option>
+                      <option value='0'>{item.placeholder}</option>
                     {
                       item.options.map(option => (
                         <option value={option.value} >{option.label}</option>

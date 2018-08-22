@@ -223,12 +223,12 @@ class App extends Component {
                 <br />
                 <DynamicField
                   onChange={this.onChange('education')}
-                  required
                   fields={[
                   {type: "text", label: "University", name: "university", placeholder: "University name"},
                   {
                     type: "select",
-                    label: "Degree",
+                    label: "Select a Degree",
+                    defaultValue: "0",
                     name: "degree",
                     placeholder: "Degree",
                     options: [
